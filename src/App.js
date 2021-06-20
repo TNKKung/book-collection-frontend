@@ -1,5 +1,11 @@
+import { Switch, Route } from "react-router-dom";
+import LoginPage from './pages/LoginPage/LoginPage'
 function App() {
-  return <div className="text-center font-mono font-bold text-3xl">tom</div>;
+  return (
+    <Switch>
+      <Route exact path="/" component={LoginPage}></Route>
+    </Switch>
+  );
 }
 
 export default App;
