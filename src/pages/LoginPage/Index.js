@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./component/logo.jpg";
+import Logo from "../../Images/logo.jpg";
 import { Link } from "react-router-dom";
 
 export default function Index() {
