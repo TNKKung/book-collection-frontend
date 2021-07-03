@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import Logo from "../../Images/logo.jpg";
 import Menu from "./component/Menu";
 export default function Index() {
-  const state = {
-    data: true,
+  const data = {
+    name : "TNKung"
   };
   let MyStatus = null;
-  if (state.data === false) {
+  if (data.name === "") {
     MyStatus = (
-      <div className="mt-10 px-4 py-4 bg-blue-500 text-white hover:bg-blue-700   hover:font-bold rounded-lg">
+      <div className="px-4 py-4 bg-blue-500 text-white hover:bg-blue-700   hover:font-bold rounded-lg">
         <span className="ml-2">Login</span>
       </div>
     );
   } else {
     MyStatus = (
-      <div className="mt-10 px-4 py-4 bg-red-500 text-white hover:bg-red-700   hover:font-bold rounded-lg">
+      <div className="px-4 py-4 bg-red-500 text-white hover:bg-red-700   hover:font-bold rounded-lg">
         <span className="ml-2">Logout</span>
       </div>
     );
@@ -31,12 +31,14 @@ export default function Index() {
             alt="IMG"
           />
         </div>
-        <div className="ml-4">
+        <div className="ml-4 ">
           <Menu Path="/" Name="Home" />
+          <Menu Path="/login" Name="Profile" />
+          <Menu Path="/login" Name="My Collection" />
           <Menu Path="/login" Name="My Store" />
           <Menu Path="/login" Name="Settings" />
           <Link to="/login">
-            {MyStatus}
+            <div className="mt-20">{MyStatus}</div>
           </Link>
         </div>
       </div>
