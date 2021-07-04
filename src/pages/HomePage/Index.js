@@ -46,10 +46,10 @@ export default function Index() {
 
   return (
     <div>
-      <div className="float-left">
-        <Navbar className="fixed flex w-full border-b items-center justify-between flex-wrap p-5 m-auto top-0 animated"></Navbar>
+      <div className="float-left fixed">
+        <Navbar />
       </div>
-      <div className="overflow-auto ">
+      <div className="ml-60">
         <SearchBar></SearchBar>
         {Data.map((item) => {
           return (
