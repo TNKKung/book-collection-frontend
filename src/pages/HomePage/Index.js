@@ -14,52 +14,89 @@ import { Link } from "react-router-dom";
 export default function Index() {
   const Data = [
     {
-      name: "KIMETSU NO YAIBA VOLUME 1",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 1",
       picture: PictureBook1,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 2",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 2",
       picture: PictureBook2,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 3",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 3",
       picture: PictureBook3,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 4",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 4",
       picture: PictureBook4,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 5",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 5",
       picture: PictureBook5,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 6",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 6",
       picture: PictureBook6,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 7",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 7",
       picture: PictureBook7,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
     {
-      name: "KIMETSU NO YAIBA VOLUME 8",
+      bookTitle: "KIMETSU NO YAIBA VOLUME 8",
       picture: PictureBook8,
+      userName: "Nattawut Krongareetham",
+      MobileNumber: "0640630406",
+      Email: "tomkabtokom@gmail.com",
     },
   ];
 
   return (
-    <div>
-      <div className="float-left fixed">
-        <div className="float-left">
+    <div className="">
+      <div className="fixed justify-start">
+        <div className="">
           <Navbar />
         </div>
       </div>
-      <div className="">
-        <div className="fixed right-8">
+      <div className="justify-center mr-40">
+        {Data.map((item) => {
+          return (
+            <DisplayCollection
+              Picture={item.picture}
+              BookTitle={item.bookTitle}
+              User={item.userName}
+              MobileNumber={item.MobileNumber}
+              Email={item.Email}
+            />
+          );
+        })}
+      </div>
+      <div className="justify-end">
+        <div className="fixed right-8 top-0">
           <SearchBar />
-          <div className="mt-96">
+          <div className="mt-96 lg:w-full w-1/2 float-right">
             <Link className="justify-center flex ">
-              <button className="bg-green-500 w-full h-14 mt-40 rounded-lg hover:bg-green-700">
+              <button className="bg-green-500 w-full h-14 mt-40 rounded-lg hover:bg-green-700 px-full">
                 Add To The Collection
               </button>
             </Link>
@@ -69,13 +106,6 @@ export default function Index() {
               </button>
             </Link>
           </div>
-        </div>
-        <div className="mr-20">
-          {Data.map((item) => {
-            return (
-              <DisplayCollection Picture={item.picture} Name={item.name} />
-            );
-          })}
         </div>
       </div>
     </div>
