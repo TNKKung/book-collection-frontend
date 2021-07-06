@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/index";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import DisplayCollection from "../../components/DisplayCollection/index";
+import DisplayCollection from "../../components/DisplayCollection/Index";
+import AddBook from "./component/AddBook";
 import PictureBook1 from "./component/images.jpg";
 import PictureBook2 from "./component/images2.jpg";
 import PictureBook3 from "./component/images3.jpg";
@@ -10,7 +11,7 @@ import PictureBook5 from "./component/images5.jpg";
 import PictureBook6 from "./component/images6.jpg";
 import PictureBook7 from "./component/images7.jpg";
 import PictureBook8 from "./component/images8.jpg";
-import { Link } from "react-router-dom";
+
 export default function Index() {
   const Data = [
     {
@@ -94,17 +95,8 @@ export default function Index() {
       <div className="justify-end">
         <div className="fixed right-8 top-0">
           <SearchBar />
-          <div className="mt-96 lg:w-full w-1/2 float-right">
-            <Link className="justify-center flex ">
-              <button className="bg-green-500 w-full h-14 mt-40 rounded-lg hover:bg-green-700 px-full">
-                Add To The Collection
-              </button>
-            </Link>
-            <Link className="justify-center flex ">
-              <button className="bg-green-500 w-full h-14 mt-5 rounded-lg hover:bg-green-700">
-                Add To The Store
-              </button>
-            </Link>
+          <div className="mt-20">
+            <AddBook Name={"Add To The Collection"} link={"/login"} />
           </div>
         </div>
       </div>
