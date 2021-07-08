@@ -4,7 +4,7 @@ import Logo from "../../Images/logo.jpg";
 import Menu from "./component/Menu";
 export default function Index() {
   const data = {
-    name : "TNKung"
+    name : "nattawut"
   };
   let MyStatus = null;
   if (data.name === "") {
@@ -22,7 +22,7 @@ export default function Index() {
   }
   return (
     <div className="text-black">
-      <div className="flex flex-col bg-gray-500 w-60 h-screen px-5 tex-gray-900 border border-gray-900">
+      <div className="flex flex-col bg-gradient-to-b from-yellow-500 to-yellow-300 w-60 h-screen px-5 tex-gray-900 border-r border-yellow-200">
         <div className="flex flex-wrap mt-8"></div>
         <div className="mb-6">
           <img

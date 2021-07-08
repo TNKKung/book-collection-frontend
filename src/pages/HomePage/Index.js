@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../components/Navbar/index";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import DisplayCollection from "../../components/DisplayCollection/Index";
-import AddBook from "./component/AddBook";
 import PictureBook1 from "./component/images.jpg";
 import PictureBook2 from "./component/images2.jpg";
 import PictureBook3 from "./component/images3.jpg";
@@ -11,6 +10,7 @@ import PictureBook5 from "./component/images5.jpg";
 import PictureBook6 from "./component/images6.jpg";
 import PictureBook7 from "./component/images7.jpg";
 import PictureBook8 from "./component/images8.jpg";
+import pictureLayout from "./component/layout.png";
 
 export default function Index() {
   const Data = [
@@ -74,31 +74,29 @@ export default function Index() {
 
   return (
     <div className="">
-      <div className="fixed justify-start">
+      <div className="fixed object-left top-0 z-10">
         <div className="">
           <Navbar />
         </div>
       </div>
-      <div className="justify-center mr-40">
-        {Data.map((item) => {
-          return (
-            <DisplayCollection
-              Picture={item.picture}
-              BookTitle={item.bookTitle}
-              User={item.userName}
-              MobileNumber={item.MobileNumber}
-              Email={item.Email}
-            />
-          );
-        })}
-      </div>
-      <div className="justify-end">
-        <div className="fixed right-8 top-0">
+      <div className="fixed flex flex-row bg-gray-300 w-full top-0 h-16">
+        <div className="ml-20 mt-1">
           <SearchBar />
-          <div className="mt-20">
-            <AddBook Name={"Add To The Collection"} link={"/login"} />
+        </div>
+        <div className="ml-96">
+          <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10">
+            <img src={pictureLayout} width="36" alt="IMG" />
           </div>
         </div>
+      </div>
+      <div className="object-center mr-40 space-y-4 mt-20">
+        {Data.map((item) => {
+          return (
+            <div className="ml-64 grid grid-cols-3 gap-4 bg-gray-600 w-10">
+              tell
+            </div>
+          );
+        })}
       </div>
     </div>
   );
