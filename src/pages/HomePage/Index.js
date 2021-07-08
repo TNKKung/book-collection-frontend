@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar/index";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import DisplayCollection from "../../components/DisplayCollection/Index";
+import DisplayCollection from "../../components/DisplayCollection1/Index.js";
+import DisplayCollection2 from "../../components/DisplayCollection2/Index.js";
 import PictureBook1 from "./component/images.jpg";
 import PictureBook2 from "./component/images2.jpg";
 import PictureBook3 from "./component/images3.jpg";
@@ -71,6 +72,15 @@ export default function Index() {
       Email: "tomkabtokom@gmail.com",
     },
   ];
+  const [state, setState] = useState(false);
+
+  const swapState = () =>{
+    if(state === false){
+      setState(true)
+    }else{
+      setState(false)
+    }
+  }
 
   return (
     <div className="">
@@ -85,19 +95,41 @@ export default function Index() {
         </div>
         <div className="ml-96">
           <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10">
-            <img src={pictureLayout} width="36" alt="IMG" />
+            <button onClick={()  => swapState()}>
+                <img src={pictureLayout} width="36" alt="IMG" />
+            </button>
           </div>
         </div>
       </div>
-      <div className="object-center mr-40 space-y-4 mt-20">
-        {Data.map((item) => {
-          return (
-            <div className="ml-64 grid grid-cols-3 gap-4 bg-gray-600 w-10">
-              tell
-            </div>
-          );
-        })}
-      </div>
+      {state ? (
+        <div className="object-center ml-60 space-y-4 mt-20 ">
+          {Data.map((item) => {
+            return (
+              <DisplayCollection
+                Picture={item.picture}
+                BookTitle={item.bookTitle}
+                User={item.userName}
+                MobileNumber={item.MobileNumber}
+                Email={item.Email}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <div className="object-center ml-60 space-y-4 mt-20 ">
+          {Data.map((item) => {
+            return (
+              <DisplayCollection2
+                Picture={item.picture}
+                BookTitle={item.bookTitle}
+                User={item.userName}
+                MobileNumber={item.MobileNumber}
+                Email={item.Email}
+              />
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }

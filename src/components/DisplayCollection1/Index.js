@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function Index(prop) {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div>
+    <div className="mr-96">
       <div class="mx-auto bg-white rounded-md shadow-xl overflow-hidden md:max-w-2xl">
         <div class="md:flex ">
           <div class="md:flex-shrink-0hidden 2xl:block ">
