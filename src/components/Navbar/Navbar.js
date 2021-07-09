@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../Images/logo.jpg";
+import Logo from "../../Images/logo.png";
 import Menu from "./component/Menu";
-export default function Index() {
+export default function Navbar() {
   const data = {
     name : "nattawut"
   };
@@ -27,13 +27,13 @@ export default function Index() {
         <div className="mb-6">
           <img
             src={Logo}
-            className="mx-auto w-20 h-20 rounded-full"
+            className="mx-auto w-20 h-20"
             alt="IMG"
           />
         </div>
         <div className="ml-4 ">
           <Menu Path="/" Name="Home" />
-          <Menu Path="/login" Name="Profile" />
+          <Menu Path="/profile" Name="Profile" />
           <Menu Path="/login" Name="My Collection" />
           <Menu Path="/login" Name="My Store" />
           <Menu Path="/login" Name="Settings" />

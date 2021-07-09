@@ -1,15 +1,20 @@
 import React from "react";
-import Logo from "../../Images/logo.jpg";
+import Logo from "../../Images/logo.png";
+import PictureStore from "./component/bookStore.jpg";
 import { Link } from "react-router-dom";
 
 export default function Index() {
   return (
     <div className="flex justify-center items-center w-full h-screen">
       <div className="flex flex-row justify-center items-center w-9/12 h-5/6 shadow-2xl">
-        <div className="hidden 2xl:block w-full h-full bg-gray-500 rounded-l-lg shadow-md"></div>
-        <div className="w-96 h-96 sm:w-full sm:h-full p-8 sm:p-0 bg-white rounded-lg shadow-md 2xl:rounded-l-none ">
+        <img
+          src={PictureStore}
+          className="hidden 2xl:block w-full h-full bg-gray-500 rounded-l-lg shadow-md"
+          alt="IMG"
+        />
+        <div className="w-96 h-96 sm:w-full sm:h-full p-8 sm:p-0 rounded-lg shadow-md 2xl:rounded-l-none bg-gradient-to-b from-yellow-500 to-yellow-300">
           <div className="items-center flex flex-col mt-1">
-            <img src={Logo} width="400" alt="IMG" />
+            <img src={Logo} className="w-48 mt-14 mb-5" alt="IMG" />
             <form className="w-80 mt-11" autoComplete="off">
               <input
                 className="w-full p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"

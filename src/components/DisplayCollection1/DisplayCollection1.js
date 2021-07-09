@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Index(prop) {
+export default function DisplayCollection1(prop) {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className="mr-96">

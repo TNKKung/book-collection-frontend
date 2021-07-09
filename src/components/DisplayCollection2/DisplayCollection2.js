@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Index(prop) {
+export default function DisplayCollection2(prop) {
   return (
     <div className="inline-flex flex-col ml-2">
       <div className="mx-auto bg-white rounded-md shadow-xl overflow-hidden md:max-w-xl">

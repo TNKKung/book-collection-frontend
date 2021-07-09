@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar/index";
+import Navbar from "../../components/Navbar/Navbar";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import DisplayCollection from "../../components/DisplayCollection1/Index.js";
-import DisplayCollection2 from "../../components/DisplayCollection2/Index.js";
+import DisplayCollection from "../../components/DisplayCollection1/DisplayCollection1.js";
+import DisplayCollection2 from "../../components/DisplayCollection2/DisplayCollection2.js";
 import PictureBook1 from "./component/images.jpg";
 import PictureBook2 from "./component/images2.jpg";
 import PictureBook3 from "./component/images3.jpg";
@@ -74,20 +74,18 @@ export default function Index() {
   ];
   const [state, setState] = useState(false);
 
-  const swapState = () =>{
-    if(state === false){
-      setState(true)
-    }else{
-      setState(false)
+  const toggleState = () => {
+    if (state === false) {
+      setState(true);
+    } else {
+      setState(false);
     }
-  }
+  };
 
   return (
     <div className="">
       <div className="fixed object-left top-0 z-10">
-        <div className="">
           <Navbar />
-        </div>
       </div>
       <div className="fixed flex flex-row bg-gray-300 w-full top-0 h-16">
         <div className="ml-20 mt-1">
@@ -95,8 +93,8 @@ export default function Index() {
         </div>
         <div className="ml-96">
           <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10">
-            <button onClick={()  => swapState()}>
-                <img src={pictureLayout} width="36" alt="IMG" />
+            <button onClick={() => toggleState()}>
+              <img src={pictureLayout} width="36" alt="IMG" />
             </button>
           </div>
         </div>
@@ -116,7 +114,7 @@ export default function Index() {
           })}
         </div>
       ) : (
-        <div className="object-center ml-60 space-y-4 mt-20 ">
+        <div className="object-center ml-60 space-y-4 mt-16 ">
           {Data.map((item) => {
             return (
               <DisplayCollection2
