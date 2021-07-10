@@ -33,7 +33,7 @@ export default function Index() {
                   Login
                 </button>
               </Link>
-              <Link to="/" className="flex flex-col items-center mt-1">
+              <Link to="/register" className="flex flex-col items-center mt-1">
                 <button className="bg-green-500 p-2 mt-2 w-full text-white rounded-lg focus:outline-none hover:bg-green-600">
                   Register
                 </button>

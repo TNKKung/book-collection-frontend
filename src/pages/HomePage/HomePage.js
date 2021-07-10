@@ -85,16 +85,20 @@ export default function Index() {
   return (
     <div className="">
       <div className="fixed object-left top-0 z-10">
-          <Navbar />
+        <Navbar />
       </div>
-      <div className="fixed flex flex-row bg-gray-300 w-full top-0 h-16">
+      <div className="fixed flex flex-row bg-white w-full top-0 h-16">
         <div className="ml-20 mt-1">
           <SearchBar />
         </div>
         <div className="ml-96">
-          <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10">
+          <div className="hover:bg-white items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10 focus:outline-white">
             <button onClick={() => toggleState()}>
-              <img src={pictureLayout} width="36" alt="IMG" />
+              <img
+                src={pictureLayout}
+                className="w-8 focus:outline-none"
+                alt="IMG"
+              />
             </button>
           </div>
         </div>
