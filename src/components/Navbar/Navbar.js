@@ -4,7 +4,7 @@ import Logo from "../../Images/logo.png";
 import Menu from "./component/Menu";
 export default function Navbar() {
   const data = {
-    name : "nattawut"
+    name: "nattawut",
   };
   let MyStatus = null;
   if (data.name === "") {
@@ -25,17 +25,13 @@ export default function Navbar() {
       <div className="flex flex-col bg-gradient-to-b from-yellow-500 to-yellow-300 w-60 h-screen px-5 tex-gray-900 border-r border-yellow-200">
         <div className="flex flex-wrap mt-8"></div>
         <div className="mb-6">
-          <img
-            src={Logo}
-            className="mx-auto w-20 h-20"
-            alt="IMG"
-          />
+          <img src={Logo} className="mx-auto w-20 h-20" alt="IMG" />
         </div>
         <div className="ml-4 ">
           <Menu Path="/" Name="Home" />
           <Menu Path="/profile" Name="Profile" />
-          <Menu Path="/login" Name="My Collection" />
-          <Menu Path="/login" Name="My Store" />
+          <Menu Path="/mycollection" Name="My Collection" />
+          <Menu Path="/" Name="My Store" />
           <Menu Path="/login" Name="Settings" />
           <Link to="/login">
             <div className="mt-20">{MyStatus}</div>

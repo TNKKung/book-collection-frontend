@@ -3,7 +3,7 @@ import iconSearch from "./component/search.png";
 export default function SearchBar() {
   return (
     <div className="flex justify-center items-center min-w-full">
-      <div className="relative mt-0 shadow-xl mr-40 ml-96">
+      <div className="relative mt-0 shadow-xl mr-40 ml-10">
         <div className="absolute mt-5 ml-3">
           <img src={iconSearch} width="20" alt="IMG"></img>
         </div>

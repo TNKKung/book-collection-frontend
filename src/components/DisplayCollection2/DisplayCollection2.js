@@ -9,7 +9,6 @@ export default function DisplayCollection2(prop) {
             <img
               className="h-40 w-10/12 md:w-40"
               src={prop.Picture}
-              width="1"
               alt="IMG"
             />
           </div>
