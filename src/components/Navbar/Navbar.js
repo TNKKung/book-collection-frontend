@@ -32,7 +32,6 @@ export default function Navbar() {
           <Menu Path="/profile" Name="Profile" />
           <Menu Path="/mycollection" Name="My Collection" />
           <Menu Path="/" Name="My Store" />
-          <Menu Path="/login" Name="Settings" />
           <Link to="/login">
             <div className="mt-20">{MyStatus}</div>
           </Link>

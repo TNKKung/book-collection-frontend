@@ -92,7 +92,7 @@ export default function Index() {
           <SearchBar />
         </div>
         <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg ml-10 ">
-          <button>
+          <button onClick={()=> toggleState()}>
             <img
               src={pictureLayout}
               className="w-8 focus:outline-none"

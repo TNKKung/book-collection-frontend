@@ -4,6 +4,9 @@ import PictureProfile from "../../Images/profile.jpg";
 import EditProfile from "./component/EditProfile";
 import EditProfile2 from "./component/EditProfile2";
 import ChangePassword from "./component/ChangePassword";
+import FaceIcon from "../../Images/facebook_icon.png";
+import LineIcon from "../../Images/line_icon.png";
+import IgIcon from "../../Images/instagram_icon.png";
 
 export default function ProfilePage() {
   const Data = {
@@ -91,13 +94,22 @@ export default function ProfilePage() {
             <div className="flex flex-row w-full h-96 justify-center items-center">
               <div className="bg-white mt-6 w-10/12 h-full rounded-lg border-yellow-300 border-2 text-base font-bold">
                 <div className="flex flex-row ml-5 mt-5">
-                  <div> Facebook: {Data.facebook}</div>
+                  <div className="flex flex-row items-center">
+                    <img src={FaceIcon} className="w-10" alt="IMG" />
+                    <div className="ml-2 mt">: {Data.facebook}</div>
+                  </div>
                 </div>
                 <div className="flex flex-row ml-5 mt-5">
-                  <div> Instagram: {Data.instagram}</div>
+                  <div className="flex flex-row items-center">
+                    <img src={IgIcon} className="w-10" alt="IMG" />
+                    <div className="ml-2">: {Data.instagram}</div>
+                  </div>
                 </div>
                 <div className="flex flex-row ml-5 mt-5">
-                  <div> Line: {Data.line}</div>
+                  <div className="flex flex-row items-center">
+                    <img src={LineIcon} className="w-10" alt="IMG" />
+                    <div className="ml-2">: {Data.line}</div>
+                  </div>
                 </div>
                 <div className="flex flex-row ml-5 mt-5">
                   <div> Favorite Book Genre: </div>
@@ -134,9 +146,7 @@ export default function ProfilePage() {
               Change Password
             </button>
           </div>
-          {stateChangePassword ? (
-            <ChangePassword />
-          ) : null}
+          {stateChangePassword ? <ChangePassword /> : null}
         </div>
       </div>
     </div>
