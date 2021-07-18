@@ -3,7 +3,7 @@ import Logo from "../../Images/logo.png";
 import PictureStore from "./component/bookStore.jpg";
 import { Link } from "react-router-dom";
 
-export default function Index() {
+export default function LoginPage() {
   return (
     <div className="flex justify-center items-center w-full h-screen">
       <div className="flex flex-row justify-center items-center w-9/12 h-5/6 shadow-2xl">

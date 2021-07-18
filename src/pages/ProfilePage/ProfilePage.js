@@ -10,6 +10,7 @@ import IgIcon from "../../Images/instagram_icon.png";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import sunIcon from "../../Images/sun.png";
 import moonIcon from "../../Images/moon.png";
+import pictureLayout from "../../Images/layout.png";
 
 export default function ProfilePage() {
   const Data = {
@@ -42,18 +43,24 @@ export default function ProfilePage() {
     }
   };
   return (
-    <div className="dark:bg-black">
-      <div className="fixed object-left top-0">
-        <Navbar />
-      </div>
+    <div className="dark:bg-black h-screen">
       <div className="fixed object-left top-0 z-10">
         <Navbar />
       </div>
-      <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white ml-52 ">
-        <div className="mt-1 mr-80 w-1/4">
+      <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white ml-56">
+        <div className="mt-1 mr-4 w-1/4">
           <SearchBar />
         </div>
-        <div className="flex items-center font-bold ">
+        <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg">
+          <button onClick={() => console.log("tomtam")}>
+            <img
+              src={pictureLayout}
+              className="w-8 focus:outline-none"
+              alt="IMG"
+            />
+          </button>
+        </div>
+        <div className="flex items-center font-bold ml-44">
           Nattawut Krongareetham
           <div className="flex flex-row ml-10">
             <img src={sunIcon} className="w-6 mr-2" alt="IMG" />
