@@ -4,7 +4,7 @@ export default function DisplayCollection1(prop) {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className="mr-96">
-      <div class="mx-auto bg-white rounded-md shadow-xl overflow-hidden md:max-w-2xl">
+      <div class="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-2xl">
         <div class="md:flex ">
           <div class="md:flex-shrink-0hidden 2xl:block ">
             <img

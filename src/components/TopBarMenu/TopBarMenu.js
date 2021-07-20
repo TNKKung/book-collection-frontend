@@ -6,7 +6,7 @@ import moonIcon from "../../Images/moon.png";
 
 export default function TopBarMenu(prop) {
   return (
-    <div>
+    <div className="z-10">
       <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white ml-56">
         <div className="mt-1 mr-4 w-1/4">
           <SearchBar />

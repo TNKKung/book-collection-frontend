@@ -5,7 +5,7 @@ export default function EditProfile1(prop) {
     <div>
       <div className="flex flex-row justify-center mt-5">
         <img
-          className="w-80 border-4 border-yellow-300 rounded-2xl"
+          className="w-80 border-8 border-yellow-300 rounded-xl"
           src={prop.pictureProfile}
           alt="IMG"
         />

@@ -7,7 +7,6 @@ import ChangePassword from "./component/ChangePassword";
 import FaceIcon from "../../Images/facebook_icon.png";
 import LineIcon from "../../Images/line_icon.png";
 import IgIcon from "../../Images/instagram_icon.png";
-import TopBarMenu from "../../components/TopBarMenu/TopBarMenu";
 
 export default function ProfilePage() {
   const Data = {
@@ -44,14 +43,13 @@ export default function ProfilePage() {
       <div className="fixed object-left top-0 z-10">
         <Navbar />
       </div>
-      <TopBarMenu />
-      <div className="flex flex-row h-screen justify-center ml-36 mt-16">
+      <div className="flex flex-row h-screen justify-center ml-36">
         <div className="bg-gradient-to-b from-yellow-500 to-yellow-300 w-1/3 rounded-xl ml-20">
           {stateData ? (
             <div>
               <div className="flex flex-row justify-center mt-5">
                 <img
-                  className="w-80 border-4 border-yellow-300 rounded-2xl"
+                  className="w-80 border-8 border-yellow-300 rounded-xl"
                   src={Data.pictureProfile}
                   alt="IMG"
                 />
