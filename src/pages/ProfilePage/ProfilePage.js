@@ -7,6 +7,7 @@ import ChangePassword from "./component/ChangePassword";
 import FaceIcon from "../../Images/facebook_icon.png";
 import LineIcon from "../../Images/line_icon.png";
 import IgIcon from "../../Images/instagram_icon.png";
+import WeeklyRankingBar from "../../components/WeeklyRankingBar/WeeklyRankingBar";
 
 export default function ProfilePage() {
   const Data = {

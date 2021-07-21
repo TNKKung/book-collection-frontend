@@ -5,9 +5,10 @@ import DisplayCollection2 from "../../components/DisplayCollection2/DisplayColle
 import DisplayCollection3 from "../../components/DisplayCollection3/DisplayCollection3";
 import Data from "../../components/Data.json";
 import TopBarMenu from "../../components/TopBarMenu/TopBarMenu";
+import WeeklyRankingBar from "../../components/WeeklyRankingBar/WeeklyRankingBar";
 
 export default function MyCollectionPage() {
-  const [state, setState] = useState(1);
+  const [state, setState] = useState(3);
 
   const callBackToggleState = () => {
     if (state === 1) {
@@ -20,12 +21,12 @@ export default function MyCollectionPage() {
   };
   return (
     <div className="h-screen dark:bg-black">
-      <div className="fixed object-left top-0 z-10">
+      <div className="fixed object-left top-0 z-20">
         <Navbar />
       </div>
       <TopBarMenu CallBackToggleState={callBackToggleState} />
       {state === 1 && (
-        <div className="object-center ml-60 space-y-4 mt-20 ">
+        <div className="object-center ml-72 space-y-2 mt-20 ">
           {Data.map((item) => {
             return (
               <DisplayCollection
@@ -41,7 +42,7 @@ export default function MyCollectionPage() {
       )}
       :
       {state === 2 && (
-        <div className="object-center ml-60 space-y-4 mt-16 ">
+        <div className="object-center ml-80 space-y-2 mt-10">
           {Data.map((item) => {
             return (
               <DisplayCollection2
@@ -57,7 +58,7 @@ export default function MyCollectionPage() {
       )}{" "}
       :{" "}
       {state === 3 && (
-        <div className="ml-60 w-3/6 space-y-4 mt-10">
+        <div className="ml-72 w-8/12 space-y-2 mt-10">
           {Data.map((item) => {
             return (
               <div className="inline-flex flex-col ml-2">
@@ -67,6 +68,7 @@ export default function MyCollectionPage() {
           })}
         </div>
       )}
+      <WeeklyRankingBar />
     </div>
   );
 }

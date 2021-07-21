@@ -5,12 +5,8 @@ export default function DisplayCollection2(prop) {
     <div className="inline-flex flex-col ml-2">
       <div className="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-xl">
         <div className="md:flex ">
-          <div className="md:flex-shrink-0hidden 2xl:block ">
-            <img
-              className="h-40 w-10/12 md:w-40"
-              src={prop.Picture}
-              alt="IMG"
-            />
+          <div className="w-32 h-40">
+              <img className="h-full w-full" src={prop.Picture} alt="IMG" />
           </div>
           <div className="p-3">
             <div className="uppercase tracking-wide text-lg text-indigo-500 font-mono">

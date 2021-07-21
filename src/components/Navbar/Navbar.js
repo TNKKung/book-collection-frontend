@@ -32,7 +32,7 @@ export default function Navbar() {
           <Menu Path="/profile" Name="Profile" />
           <Menu Path="/mycollection" Name="My Collection" />
           <Menu Path="/" Name="My Store" />
-          <Link to="/login">
+          <Link to="/login" className="bottom-0">
             <div className="mt-20">{MyStatus}</div>
           </Link>
         </div>
