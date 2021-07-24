@@ -6,7 +6,7 @@ export default function WeeklyRankingBar(){
         <div className="bg-gray-300 fixed right-0 top-14 mt-2 z-0 w-1/6 h-full">
         <div className="bg-gray-800 flex items-center justify-center h-16">
           <div className="font-bold text-sm text-yellow-300">
-            WEEKLY CARTOON RANKINGS
+            WEEKLY MANGA RANKINGS
           </div>
         </div>
         <div className="flex justify-center mt-3 mb-4">
@@ -30,7 +30,7 @@ export default function WeeklyRankingBar(){
         <div className="flex justify-center mt-3 mb-4">
           <div className="space-y-3 text-base">
             <Link className="hover:underline">
-              <div>1.Comic</div>
+              <div>1.manga</div>
             </Link>
             <Link className="hover:underline">
               <div>2.Course</div>
@@ -75,7 +75,7 @@ export default function WeeklyRankingBar(){
               <div>History and geography</div>
             </Link>
             <Link className="hover:underline">
-              <div>Comic</div>
+              <div>Manga</div>
             </Link>
           </div>
         </div>

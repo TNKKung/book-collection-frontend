@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../Images/logo.png";
-import Menu from "./component/Menu";
-export default function Navbar() {
+import Logo from "../../../Images/logo.png"
+import Menu from "./Menu.js";
+export default function AllMenu(prop) {
   const data = {
     name: "nattawut",
   };
@@ -20,6 +20,7 @@ export default function Navbar() {
       </div>
     );
   }
+
   return (
     <div className="text-black">
       <div className="flex flex-col bg-gradient-to-b from-yellow-500 to-yellow-300 w-60 h-screen px-5 tex-gray-900 border-r border-yellow-200">

@@ -3,24 +3,36 @@ import pictureLayout from "../../Images/layout.png";
 import SearchBar from "../SearchBar/SearchBar";
 import sunIcon from "../../Images/sun.png";
 import moonIcon from "../../Images/moon.png";
+import listIcon from "../../Images/list.png";
 
 export default function TopBarMenu(prop) {
   return (
     <div className="z-10">
-      <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white ml-56">
-        <div className="mt-1 mr-4 w-1/4">
+      <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white">
+        <div className="hover:bg-gray-500 flex items-center justify-center mt-2 h-12 w-12 rounded-lg mr-20">
+          <button
+            onClick={() => prop.CallBackToggleMenu()}
+            className="focus:outline-none"
+          >
+            <img src={listIcon} className="w-6 focus:outline-none" alt="IMG" />
+          </button>
+        </div>
+        <div className="mt-1 mr-4 w-1/4 ml-96">
           <SearchBar />
         </div>
         <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg">
-          <button onClick={() => prop.CallBackToggleState()}>
+          <button
+            onClick={() => prop.CallBackToggleState()}
+            className="focus:outline-none"
+          >
             <img
               src={pictureLayout}
-              className="w-8 focus:outline-none"
+              className="w-8 focus:outline-none "
               alt="IMG"
             />
           </button>
         </div>
-        <div className="flex items-center font-bold ml-44">
+        <div className="flex items-center font-bold ml-52">
           Nattawut Krongareetham
           <div className="flex flex-row ml-10">
             <img src={sunIcon} className="w-6 mr-2" alt="IMG" />

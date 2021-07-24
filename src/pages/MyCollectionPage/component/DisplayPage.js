@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../css/toggle.css";
-import Navbar from "../../../components/Navbar/Navbar";
+import LeftBarMenu from "../../../components/LeftBarMenu/LeftBarMenu";
 import FaceIcon from "../../../Images/facebook_icon.png";
 import IgIcon from "../../../Images/instagram_icon.png";
 import LineIcon from "../../../Images/line_icon.png";
@@ -10,9 +10,7 @@ import WeeklyRankingBar from "../../../components/WeeklyRankingBar/WeeklyRanking
 export default function DisplayPage(prop) {
   return (
     <div className="flex flex-row dark:bg-black">
-      <div className="fixed object-left top-0 z-10">
-        <Navbar />
-      </div>
+        <LeftBarMenu />
       <TopBarMenu />
       <div className="flex flex-col justify-center items-center w-full h-screen">
         <div className="flex flex-col bg-gray-300 w-7/12 h-3/4 rounded-lg">

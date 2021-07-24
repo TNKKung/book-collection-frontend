@@ -1,0 +1,32 @@
+.animation1 {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  animation: mymove1 0.2s;
+  animation-timing-function: ease;
+  left: -20px;
+}
+@keyframes mymove1 {
+  from {
+    left: -250px;
+  }
+  to {
+    left: -20px;
+  }
+}
+.animation2 {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  animation: mymove2 0.2s;
+  animation-timing-function: linear;
+  left: -250px;
+}
+@keyframes mymove2 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: -250px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/LeftBarMenu/LeftBarMenu";
 import DisplayCollection from "../../components/DisplayCollection1/DisplayCollection1.js";
 import DisplayCollection2 from "../../components/DisplayCollection2/DisplayCollection2.js";
 import DisplayCollection3 from "../../components/DisplayCollection3/DisplayCollection3";
@@ -9,6 +9,14 @@ import WeeklyRankingBar from "../../components/WeeklyRankingBar/WeeklyRankingBar
 
 export default function Index() {
   const [state, setState] = useState(3);
+  const [stateNavbar, setStateNavbar] = useState(true);
+  const callBackToggleMenu = () => {
+    if (stateNavbar === false) {
+      setStateNavbar(true);
+    } else {
+      setStateNavbar(false);
+    }
+  };
 
   const callBackToggleState = () => {
     if (state === 1) {
@@ -22,10 +30,11 @@ export default function Index() {
 
   return (
     <div className="">
-      <div className="fixed object-left top-0 z-20">
-        <Navbar />
-      </div>
-      <TopBarMenu CallBackToggleState={callBackToggleState} />
+      <TopBarMenu
+        CallBackToggleState={callBackToggleState}
+        CallBackToggleMenu={callBackToggleMenu}
+      />
+      <Navbar state={stateNavbar} />
       {state === 1 && (
         <div className="object-center ml-72 space-y-2 mt-20 ">
           {Data.map((item) => {
@@ -43,17 +52,9 @@ export default function Index() {
       )}
       :
       {state === 2 && (
-        <div className="object-center ml-80 space-y-2 mt-10">
+        <div className="ml-80 w-7/12 space-y-2 mt-12">
           {Data.map((item) => {
-            return (
-              <DisplayCollection2
-                Picture={item.picture}
-                BookTitle={item.bookTitle}
-                User={item.userName}
-                MobileNumber={item.MobileNumber}
-                Email={item.Email}
-              />
-            );
+            return <DisplayCollection2 data={item} />;
           })}
         </div>
       )}{" "}
