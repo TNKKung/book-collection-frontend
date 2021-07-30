@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../components/LeftBarMenu/LeftBarMenu";
+import LeftBarMenu from "../../components/LeftBarMenu/LeftBarMenu";
 import DisplayCollection from "../../components/DisplayCollection1/DisplayCollection1.js";
 import DisplayCollection2 from "../../components/DisplayCollection2/DisplayCollection2.js";
 import DisplayCollection3 from "../../components/DisplayCollection3/DisplayCollection3";
@@ -34,7 +34,7 @@ export default function Index() {
         CallBackToggleState={callBackToggleState}
         CallBackToggleMenu={callBackToggleMenu}
       />
-      <Navbar state={stateNavbar} />
+      <LeftBarMenu state={stateNavbar} />
       {state === 1 && (
         <div className="object-center ml-72 space-y-2 mt-20 ">
           {Data.map((item) => {

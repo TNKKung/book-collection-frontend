@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../css/toggle.css";
 import LeftBarMenu from "../../../components/LeftBarMenu/LeftBarMenu";
 import FaceIcon from "../../../Images/facebook_icon.png";
@@ -8,10 +8,32 @@ import TopBarMenu from "../../../components/TopBarMenu/TopBarMenu";
 import WeeklyRankingBar from "../../../components/WeeklyRankingBar/WeeklyRankingBar";
 
 export default function DisplayPage(prop) {
+  const [state, setState] = useState(3);
+  const [stateNavbar, setStateNavbar] = useState(true);
+  const callBackToggleMenu = () => {
+    if (stateNavbar === false) {
+      setStateNavbar(true);
+    } else {
+      setStateNavbar(false);
+    }
+  };
+
+  const callBackToggleState = () => {
+    if (state === 1) {
+      setState(2);
+    } else if (state === 2) {
+      setState(3);
+    } else {
+      setState(1);
+    }
+  };
   return (
     <div className="flex flex-row dark:bg-black">
-        <LeftBarMenu />
-      <TopBarMenu />
+      <LeftBarMenu state={stateNavbar} />
+      <TopBarMenu
+        CallBackToggleState={callBackToggleState}
+        CallBackToggleMenu={callBackToggleMenu}
+      />
       <div className="flex flex-col justify-center items-center w-full h-screen">
         <div className="flex flex-col bg-gray-300 w-7/12 h-3/4 rounded-lg">
           <div className="flex flex-row justify-center ml-8 mt-8">

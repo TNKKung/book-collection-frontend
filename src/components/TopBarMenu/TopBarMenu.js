@@ -17,9 +17,6 @@ export default function TopBarMenu(prop) {
             <img src={listIcon} className="w-6 focus:outline-none" alt="IMG" />
           </button>
         </div>
-        <div className="mt-1 mr-4 w-1/4 ml-96">
-          <SearchBar />
-        </div>
         <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg">
           <button
             onClick={() => prop.CallBackToggleState()}

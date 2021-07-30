@@ -7,6 +7,8 @@ import ChangePassword from "./component/ChangePassword";
 import FaceIcon from "../../Images/facebook_icon.png";
 import LineIcon from "../../Images/line_icon.png";
 import IgIcon from "../../Images/instagram_icon.png";
+import TopBarMenu from "../../components/TopBarMenu/TopBarMenu";
+import WeeklyRankingBar from "../../components/WeeklyRankingBar/WeeklyRankingBar";
 
 export default function ProfilePage() {
   const Data = {
@@ -23,6 +25,8 @@ export default function ProfilePage() {
   };
   const [stateData, setStateData] = useState(true);
   const [stateChangePassword, setStateChangePassword] = useState(false);
+  const [state, setState] = useState(3);
+  const [stateNavbar, setStateNavbar] = useState(true);
 
   const toggleStateData = () => {
     if (stateData === false) {
@@ -38,11 +42,30 @@ export default function ProfilePage() {
       setStateChangePassword(false);
     }
   };
+  const callBackToggleMenu = () => {
+    if (stateNavbar === false) {
+      setStateNavbar(true);
+    } else {
+      setStateNavbar(false);
+    }
+  };
+  const callBackToggleState = () => {
+    if (state === 1) {
+      setState(2);
+    } else if (state === 2) {
+      setState(3);
+    } else {
+      setState(1);
+    }
+  };
   return (
     <div className="dark:bg-black h-screen">
-      <LeftBarMenu />
-
-      <div className="flex flex-row h-screen justify-center ml-36">
+      <LeftBarMenu state={stateNavbar}  />
+      <TopBarMenu
+        CallBackToggleState={callBackToggleState}
+        CallBackToggleMenu={callBackToggleMenu}
+      />
+      <div className="flex flex-row h-screen w-11/12 justify-center ml-4 mt-16">
         <div className="bg-gradient-to-b from-yellow-500 to-yellow-300 w-1/3 rounded-xl ml-20">
           {stateData ? (
             <div>
@@ -147,6 +170,7 @@ export default function ProfilePage() {
           </div>
           {stateChangePassword ? <ChangePassword /> : null}
         </div>
+        <WeeklyRankingBar />
       </div>
     </div>
   );
