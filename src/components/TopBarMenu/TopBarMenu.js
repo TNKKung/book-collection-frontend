@@ -1,6 +1,6 @@
 import React from "react";
 import pictureLayout from "../../Images/layout.png";
-import SearchBar from "../SearchBar/SearchBar";
+import slashIcon from "../../Images/Slash.png";
 import sunIcon from "../../Images/sun.png";
 import moonIcon from "../../Images/moon.png";
 import listIcon from "../../Images/list.png";
@@ -8,8 +8,8 @@ import listIcon from "../../Images/list.png";
 export default function TopBarMenu(prop) {
   return (
     <div className="z-10">
-      <div className="fixed flex flex-row justify-center bg-yellow-400 w-full top-0 h-16 focus:outline-white">
-        <div className="hover:bg-gray-500 flex items-center justify-center mt-2 h-12 w-12 rounded-lg mr-20">
+      <div className="fixed flex flex-row justify-between bg-yellow-400 w-full top-0 h-16 focus:outline-white">
+        <div className="hover:bg-white flex items-center justify-center mt-2 h-12 w-12 rounded-lg ml-2">
           <button
             onClick={() => prop.CallBackToggleMenu()}
             className="focus:outline-none"
@@ -17,38 +17,43 @@ export default function TopBarMenu(prop) {
             <img src={listIcon} className="w-6 focus:outline-none" alt="IMG" />
           </button>
         </div>
-        <div className="hover:bg-gray-500 items-center justify-center flex mt-2 h-12 w-12 rounded-lg">
-          <button
-            onClick={() => prop.CallBackToggleState()}
-            className="focus:outline-none"
-          >
-            <img
-              src={pictureLayout}
-              className="w-8 focus:outline-none "
-              alt="IMG"
-            />
-          </button>
-        </div>
-        <div className="flex items-center font-bold ml-52">
-          Nattawut Krongareetham
-          <div className="flex flex-row ml-10">
-            <img src={sunIcon} className="w-6 mr-2" alt="IMG" />
-            <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-              <input
-                type="checkbox"
-                name="toggle"
-                id="toggle"
-                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-gray-300 border-4 appearance-none cursor-pointer"
+        <div className="flex items-center font-bold">
+          <div className="hover:bg-white flex items-center justify-center h-12 w-12 rounded-lg mr-2">
+            <button
+              onClick={() => prop.CallBackToggleState()}
+              className="focus:outline-none"
+            >
+              <img
+                src={pictureLayout}
+                className="w-8 focus:outline-none "
+                alt="IMG"
+              />
+            </button>
+          </div>
+          <div className="flex flex-row mt-1 ml-20">
+            <div className="flex items-center justify-center h-6 w-6 rounded-lg">
+              <button
                 onClick={() =>
                   document.documentElement.classList.toggle("dark")
                 }
-              />
-              <label
-                for="toggle"
-                className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-              ></label>
+                className="focus:outline-none"
+              >
+                <img src={sunIcon} className="w-6" alt="IMG" />
+              </button>
             </div>
-            <img src={moonIcon} className="w-6 mr-2" alt="IMG" />
+            <div className="flex items-center justify-center">
+              <img src={slashIcon} className="w-6" alt="IMG" />
+            </div>
+            <div className="flex items-center justify-center h-6 w-6 rounded-lg mr-20">
+              <button
+                onClick={() =>
+                  document.documentElement.classList.toggle("dark")
+                }
+                className="focus:outline-none"
+              >
+                <img src={moonIcon} className="w-6" alt="IMG" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

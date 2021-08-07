@@ -17,7 +17,7 @@ export default function LeftBarMenu(prop) {
         {prop.state ? (
           <div className="animation1">
             <div className="text-black">
-              <div className="flex flex-col bg-gradient-to-b from-yellow-500 to-yellow-300 w-60 h-screen px-5 tex-gray-900 border-r border-yellow-200">
+              <div className="flex flex-col w-60 h-screen px-5 tex-gray-900 border-r">
                 <AllMenu />
               </div>
             </div>
@@ -25,7 +25,7 @@ export default function LeftBarMenu(prop) {
         ) : (
           <div className="animation2">
             <div className="text-black">
-              <div className="flex flex-col bg-gradient-to-b from-yellow-500 to-yellow-300 w-60 h-screen px-5 tex-gray-900 border-r border-yellow-200">
+              <div className="flex flex-col w-60 h-screen px-5 tex-gray-900 border-r">
                 <AllMenu />
               </div>
             </div>

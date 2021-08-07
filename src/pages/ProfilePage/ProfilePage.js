@@ -60,7 +60,7 @@ export default function ProfilePage() {
   };
   return (
     <div className="dark:bg-black h-screen">
-      <LeftBarMenu state={stateNavbar}  />
+      <LeftBarMenu state={stateNavbar} />
       <TopBarMenu
         CallBackToggleState={callBackToggleState}
         CallBackToggleMenu={callBackToggleMenu}
@@ -77,24 +77,77 @@ export default function ProfilePage() {
                 />
               </div>
               <div className="flex flex-row w-full h-96 justify-center items-center">
-                <div className="bg-white p-5 mt-16 w-10/12 h-full rounded-lg border-yellow-300 border-2 font-bold text-base">
-                  <div className="flex flex-row ml-5 mt-5">
-                    <div> Frist-Name: {Data.firstName}</div>
+                <div className="bg-white  mt-16 w-10/12 h-full rounded-lg border-yellow-300 border-2  text-base font-bold">
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center">
+                      Frist-Name:
+                    </div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-firstname"
+                      type="text"
+                      placeholder={Data.firstName}
+                      disabled
+                    />
                   </div>
-                  <div className="flex flex-row ml-5 mt-5">
-                    <div> Last-Name: {Data.lastName}</div>
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center">
+                      {" "}
+                      Last-Name:
+                    </div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-lastname"
+                      type="text"
+                      placeholder={Data.lastName}
+                      disabled
+                    />
                   </div>
-                  <div className="flex flex-row ml-5 mt-5">
-                    <div> Birth-Day: {Data.birthDay}</div>
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center"> E-mail:</div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-email"
+                      type="email"
+                      placeholder={Data.email}
+                      disabled
+                    />
                   </div>
-                  <div className="flex flex-row ml-5 mt-5">
-                    <div> E-mail: {Data.email}</div>
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center">
+                      {" "}
+                      Birth-Day:
+                    </div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-birth-day"
+                      type="text"
+                      placeholder={Data.birthDay}
+                      disabled
+                    />
                   </div>
-                  <div className="flex flex-row ml-5 mt-5 ">
-                    <div> Tell: {Data.tell}</div>
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center"> Tell:</div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-mobile"
+                      type="text"
+                      placeholder={Data.tell}
+                      disabled
+                    />
                   </div>
-                  <div className="flex flex-row ml-5 mt-5">
-                    <div> Address: {Data.address}</div>
+                  <div className="flex flex-row justify-between ml-5 mt-5">
+                    <div className="flex flex-col justify-center">
+                      {" "}
+                      Address:
+                    </div>
+                    <input
+                      className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                      id="input-Address"
+                      type="text"
+                      placeholder={Data.address}
+                      disabled
+                    />
                   </div>
                 </div>
               </div>
@@ -115,28 +168,43 @@ export default function ProfilePage() {
           {stateData ? (
             <div className="flex flex-row w-full h-96 justify-center items-center">
               <div className="bg-white mt-6 w-10/12 h-full rounded-lg border-yellow-300 border-2 text-base font-bold">
-                <div className="flex flex-row ml-5 mt-5">
-                  <div className="flex flex-row items-center">
-                    <img src={FaceIcon} className="w-10" alt="IMG" />
-                    <div className="ml-2 mt">: {Data.facebook}</div>
-                  </div>
+                <div className="flex flex-row justify-between ml-5 mt-5">
+                  <img src={FaceIcon} className="w-10" alt="IMG" />
+                  <div className="flex flex-row items-center"> : </div>
+                  <input
+                    className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                    id="input-facebook"
+                    type="text"
+                    placeholder={Data.facebook}
+                    disabled 
+                  />
                 </div>
-                <div className="flex flex-row ml-5 mt-5">
-                  <div className="flex flex-row items-center">
-                    <img src={IgIcon} className="w-10" alt="IMG" />
-                    <div className="ml-2">: {Data.instagram}</div>
-                  </div>
+                <div className="flex flex-row justify-between ml-5 mt-5">
+                  <img src={IgIcon} className="w-10" alt="IMG" />
+                  <div className="flex flex-row items-center"> : </div>
+                  <input
+                    className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                    id="input-instagram"
+                    type="text"
+                    placeholder={Data.instagram}
+                    disabled 
+                  />
                 </div>
-                <div className="flex flex-row ml-5 mt-5">
-                  <div className="flex flex-row items-center">
-                    <img src={LineIcon} className="w-10" alt="IMG" />
-                    <div className="ml-2">: {Data.line}</div>
-                  </div>
+                <div className="flex flex-row justify-between ml-5 mt-5">
+                  <img src={LineIcon} className="w-10" alt="IMG" />
+                  <div className="flex flex-row items-center"> : </div>
+                  <input
+                    className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                    id="input-line"
+                    type="text"
+                    placeholder={Data.line}
+                    disabled
+                  />
                 </div>
-                <div className="flex flex-row ml-5 mt-5">
+                <div className="flex flex-row ml-5 mt-5 mb-5">
                   <div> Favorite Book Genre: </div>
                 </div>
-                <div className="flex flex-row ml-5 mt-5">
+                <div className="flex flex-row ml-5 mt-5 mb-5">
                   <div> Total Number Of Stories: </div>
                 </div>
                 <div className="flex flex-row ml-5 mt-5">

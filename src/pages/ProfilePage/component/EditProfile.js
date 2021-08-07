@@ -49,7 +49,7 @@ export default function EditProfile1(prop) {
             />
           </div>
           <div className="flex flex-row justify-between ml-5 mt-5">
-            <div className="flex flex-col justify-center"> Birth-Day:</div>
+            <div className="flex flex-col justify-center"> Tell:</div>
             <input
               className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
               id="input-mobile"

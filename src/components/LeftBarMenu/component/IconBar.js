@@ -10,7 +10,7 @@ export default function IconBar() {
   
   return (
     <div className="fixed top-16 z-30">
-      <div className="flex flex-col items-center bg-gradient-to-b from-yellow-500 to-yellow-300 w-12 h-screen tex-gray-900 ">
+      <div className="flex flex-col items-center bg-gradient-to-b from-yellow-400 to-yellow-300 w-12 h-screen tex-gray-900 ">
         <Link className="mt-32 focus:outline-none hover:bg-white rounded-sm p-1" to="/">
           <button className="focus:outline-none">
             <img src={homeIcon} className="w-6" alt="IMG" />
