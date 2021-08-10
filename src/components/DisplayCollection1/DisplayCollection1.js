@@ -23,7 +23,7 @@ export default function DisplayCollection1(prop) {
               <div className="font-mono lowercase">{prop.User}</div>
             </div>
             <div className="mt-2">
-              <div className="text-blue-500 font-mono">Contract</div>
+              <div className="text-blue-500 font-mono">Contact</div>
               <div className="flex flex-row">
                 <div className=" text-blue-500 font-mono">Phone : </div>
                 <div className="font-mobo">{prop.MobileNumber}</div>

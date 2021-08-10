@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
 
 body {
-  @apply bg-gray-200;
+  @apply bg-gray-100;
   font-family:"Kanit",sans-serif;
 }
 ::-webkit-scrollbar {

@@ -8,8 +8,8 @@ import listIcon from "../../Images/list.png";
 export default function TopBarMenu(prop) {
   return (
     <div className="z-10">
-      <div className="fixed flex flex-row justify-between bg-yellow-400 w-full top-0 h-16 focus:outline-white">
-        <div className="hover:bg-white flex items-center justify-center mt-2 h-12 w-12 rounded-lg ml-2">
+      <div className="fixed flex flex-row justify-between bg-white w-full top-0 h-16 focus:outline-white border-yellow-200 border-b">
+        <div className="hover:bg-yellow-100 flex items-center justify-center mt-2 h-12 w-12 rounded-lg ml-2">
           <button
             onClick={() => prop.CallBackToggleMenu()}
             className="focus:outline-none"
@@ -18,7 +18,7 @@ export default function TopBarMenu(prop) {
           </button>
         </div>
         <div className="flex items-center font-bold">
-          <div className="hover:bg-white flex items-center justify-center h-12 w-12 rounded-lg mr-2">
+          <div className="hover:bg-yellow-100 flex items-center justify-center h-12 w-12 rounded-lg ml-10">
             <button
               onClick={() => prop.CallBackToggleState()}
               className="focus:outline-none"
