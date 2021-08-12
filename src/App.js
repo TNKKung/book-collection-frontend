@@ -5,6 +5,7 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage.js";
 import DisplayPage from "./pages/MyCollectionPage/component/DisplayPage";
+import PageLayout from "./components/PageLayout/PageLayout";
 function App() {
   return (
     <Switch>
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/mycollection" component={MyCollectionPage} />
       <Route exact path="/displaypage" component={DisplayPage} />
+      <Route exact path="/page" component={PageLayout} />
     </Switch>
   );
 }

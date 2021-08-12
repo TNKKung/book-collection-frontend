@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function WeeklyRankingBar() {
   return (
     <div className="hidden xl:block bg-white fixed right-0 top-14 mt-2 z-0 w-1/6 h-full border-l-2 border-yellow-200">
-      <div className="bg-gray-100 flex items-center justify-center h-16">
+      <div className="bg-yellow-100 flex items-center justify-center h-16">
         <div className="font-bold text-lg text-black">
           WEEKLY MANGA RANKINGS
         </div>
@@ -22,7 +22,7 @@ export default function WeeklyRankingBar() {
           </Link>
         </div>
       </div>
-      <div className="bg-gray-100 flex items-center justify-center h-16 mt-3">
+      <div className="bg-yellow-100 flex items-center justify-center h-16 mt-3">
         <div className="font-bold text-lg text-center text-black">
           WEEKLY CATEGORY RANKINGS
         </div>
@@ -40,7 +40,7 @@ export default function WeeklyRankingBar() {
           </Link>
         </div>
       </div>
-      <div className="bg-gray-100 flex items-center justify-center h-16 mt-3">
+      <div className="bg-yellow-100 flex items-center justify-center h-16 mt-3">
         <div className="font-bold text-lg text-black">All Categories</div>
       </div>
       <div className="flex justify-center mt-3 mb-4">
