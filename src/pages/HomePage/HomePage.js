@@ -30,13 +30,13 @@ export default function Index() {
 
   return (
     <div className="flex flex-col">
-      <div className="bg-red-500 w-full h-20">
+      <div className="bg-red-500 w-full h-16">
         <TopBarMenu
           CallBackToggleState={callBackToggleState}
           CallBackToggleMenu={callBackToggleMenu}
         />
       </div>
-      <div className="flex flex-row">
+      <div className="flex flex-row ">
         <div className="bg-green-500 w-64 h-screen">
           <LeftBarMenu state={stateNavbar} />
         </div>
