@@ -29,48 +29,56 @@ export default function Index() {
   };
 
   return (
-    <div className="">
-      <TopBarMenu
-        CallBackToggleState={callBackToggleState}
-        CallBackToggleMenu={callBackToggleMenu}
-      />
-      <LeftBarMenu state={stateNavbar} />
-      {state === 1 && (
-        <div className="object-center ml-72 space-y-2 mt-20 ">
-          {Data.map((item) => {
-            return (
-              <DisplayCollection
-                Picture={item.picture}
-                BookTitle={item.bookTitle}
-                User={item.userName}
-                MobileNumber={item.MobileNumber}
-                Email={item.Email}
-              />
-            );
-          })}
+    <div className="flex flex-col">
+      <div className="bg-red-500 w-full h-20">
+        <TopBarMenu
+          CallBackToggleState={callBackToggleState}
+          CallBackToggleMenu={callBackToggleMenu}
+        />
+      </div>
+      <div className="flex flex-row">
+        <div className="bg-green-500 w-64 h-screen">
+          <LeftBarMenu state={stateNavbar} />
         </div>
-      )}
-      :
-      {state === 2 && (
-        <div className="ml-80 w-7/12 space-y-2 mt-12">
-          {Data.map((item) => {
-            return <DisplayCollection2 data={item} />;
-          })}
+        <div className="max-w-7xl w-full h-screen">
+          {state === 1 && (
+            <div className="object-center ml-72 space-y-2 mt-20 ">
+              {Data.map((item) => {
+                return (
+                  <DisplayCollection
+                    Picture={item.picture}
+                    BookTitle={item.bookTitle}
+                    User={item.userName}
+                    MobileNumber={item.MobileNumber}
+                    Email={item.Email}
+                  />
+                );
+              })}
+            </div>
+          )}
+          {state === 2 && (
+            <div className="ml-80 w-7/12 space-y-2 mt-12">
+              {Data.map((item) => {
+                return <DisplayCollection2 data={item} />;
+              })}
+            </div>
+          )}{" "}
+          {state === 3 && (
+            <div className="ml-12 space-x-2 space-y-4 mt-2">
+              {Data.map((item) => {
+                return (
+                  <div className="inline-flex flex-col ml-2">
+                    <DisplayCollection3 data={item} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
-      )}{" "}
-      :{" "}
-      {state === 3 && (
-        <div className="ml-72 w-8/12 space-y-2 mt-10">
-          {Data.map((item) => {
-            return (
-              <div className="inline-flex flex-col ml-2">
-                <DisplayCollection3 data={item} />
-              </div>
-            );
-          })}
+        <div className="bg-blue-500 h-screen w-60 ">
+          <WeeklyRankingBar />
         </div>
-      )}
-      <WeeklyRankingBar />
+      </div>
     </div>
   );
 }
