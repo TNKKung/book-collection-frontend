@@ -9,12 +9,12 @@ import WeeklyRankingBar from "../../components/WeeklyRankingBar/WeeklyRankingBar
 
 export default function Index() {
   const [state, setState] = useState(3);
-  const [stateNavbar, setStateNavbar] = useState(true);
+  const [stateLeftBar, setStateLeftBar] = useState(true);
   const callBackToggleMenu = () => {
-    if (stateNavbar === false) {
-      setStateNavbar(true);
+    if (stateLeftBar === false) {
+      setStateLeftBar(true);
     } else {
-      setStateNavbar(false);
+      setStateLeftBar(false);
     }
   };
 
@@ -36,13 +36,12 @@ export default function Index() {
           CallBackToggleMenu={callBackToggleMenu}
         />
       </div>
-      <div className="flex flex-row ">
-        <div className="bg-green-500 w-64 h-screen">
-          <LeftBarMenu state={stateNavbar} />
-        </div>
-        <div className="max-w-7xl w-full h-screen">
-          {state === 1 && (
-            <div className="object-center ml-72 space-y-2 mt-20 ">
+      <div className="flex flex-row">
+        <LeftBarMenu state={stateLeftBar} />
+        <div className="">
+        {state === 1 && (
+          <div className={`${stateLeftBar ? "ml-72 mr-56" : "ml-28 mr-56"}`}>
+            <div className="object-center ml-72 space-y-2 mt-20">
               {Data.map((item) => {
                 return (
                   <DisplayCollection
@@ -55,16 +54,20 @@ export default function Index() {
                 );
               })}
             </div>
-          )}
-          {state === 2 && (
-            <div className="ml-80 w-7/12 space-y-2 mt-12">
+          </div>
+        )}
+        {state === 2 && (
+          <div className={`${stateLeftBar ? "ml-80 mr-56" : "ml-40 mr-56"}`}>
+            <div className="space-x-1 space-y-2 mt-2">
               {Data.map((item) => {
                 return <DisplayCollection2 data={item} />;
               })}
             </div>
-          )}{" "}
-          {state === 3 && (
-            <div className="ml-12 space-x-2 space-y-4 mt-2">
+          </div>
+        )}{" "}
+        {state === 3 && (
+          <div className={`${stateLeftBar ? "ml-72 mr-56" : "xl:ml-28 xl:mr-56"}`}>
+            <div className="space-y-4 mt-2">
               {Data.map((item) => {
                 return (
                   <div className="inline-flex flex-col ml-2">
@@ -73,11 +76,12 @@ export default function Index() {
                 );
               })}
             </div>
-          )}
+          </div>
+        )}
         </div>
-        <div className="bg-blue-500 h-screen w-60 ">
-          <WeeklyRankingBar />
-        </div>
+      </div>
+      <div className="hidden 2xl:block">
+        <WeeklyRankingBar />
       </div>
     </div>
   );

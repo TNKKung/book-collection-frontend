@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function DisplayCollection2(prop) {
   return (
     <Link to={{ pathname: "/displaypage", state: { data: prop.data } }}>
-      <div className="inline-flex flex-col ml-4 mb-3">
+      <div className="inline-flex flex-col mb-3">
         <div className="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-xl">
           <div className="md:flex ">
             <div className="w-32 h-40">
