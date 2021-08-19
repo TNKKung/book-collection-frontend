@@ -1,5 +1,5 @@
 import React from "react";
-import iconSearch from "./component/search.png";
+import iconSearch from "./search.png";
 export default function SearchBar() {
   return (
     <div className="flex justify-center items-center min-w-full">

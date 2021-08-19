@@ -1,22 +1,43 @@
-import React from "react";
+import React,{useState} from "react";
 import TopBarMenu from "../TopBarMenu/TopBarMenu";
 import LeftBarMenu from "../LeftBarMenu/LeftBarMenu";
-import WeeklyRank from "../WeeklyRankingBar/WeeklyRankingBar";
+import WeeklyRankingBar from "../WeeklyRankingBar/WeeklyRankingBar";
 
-export default function PageLayout() {
+
+export default function PageLayout(props) {
+  const [state, setState] = useState(3);
+  const [stateLeftBar, setStateLeftBar] = useState(true);
+  const callBackToggleMenu = () => {
+    if (stateLeftBar === false) {
+      setStateLeftBar(true);
+    } else {
+      setStateLeftBar(false);
+    }
+  };
+  const callBackToggleState = () => {
+    if (state === 1) {
+      setState(2);
+    } else if (state === 2) {
+      setState(3);
+    } else {
+      setState(1);
+    }
+  };
   return (
     <div className="flex flex-col">
-      <div className="bg-red-500 w-full h-20">
-        <TopBarMenu />
-      </div>
+      <div className="w-full h-16"></div>
+        <TopBarMenu
+          CallBackToggleState={callBackToggleState}
+          CallBackToggleMenu={callBackToggleMenu}
+        />
       <div className="flex flex-row">
-        <div className="bg-green-500 w-60 h-screen">
-          <LeftBarMenu state={true} />
+        <LeftBarMenu state={stateLeftBar} />
+        <div className="">
+          {props.children}
         </div>
-        <div className="flex-auto bg-yellow-500 h-screen">content</div>
-        <div className="bg-blue-500 h-screen w-60 ">
-          <WeeklyRank />
-        </div>
+      </div>
+      <div className="hidden 2xl:block">
+        <WeeklyRankingBar />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import slashIcon from "../../Images/Slash.png";
 import sunIcon from "../../Images/sun.png";
 import moonIcon from "../../Images/moon.png";
 import listIcon from "../../Images/list.png";
+import SearchBar from "./component/SearchBar";
 
 export default function TopBarMenu(prop) {
   return (
@@ -16,6 +17,9 @@ export default function TopBarMenu(prop) {
           >
             <img src={listIcon} className="w-6 focus:outline-none" alt="IMG" />
           </button>
+        </div>
+        <div>
+          <SearchBar />
         </div>
         <div className="flex items-center font-bold">
           <div className="hover:bg-yellow-100 flex items-center justify-center h-12 w-12 rounded-lg ml-10">

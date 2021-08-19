@@ -16,16 +16,10 @@ export default function LogoutButton(prop) {
   } else {
     MyStatus = (
       <div>
-        {prop.stateButton ? (
-          <div className="flex flex-row w-48 px-4 py-4 ml-1 bg-red-500 text-white hover:bg-red-700 hover:font-bold rounded-lg">
-            <img src={prop.icon} className="w-6" alt="IMG" />
-            <div className="ml-2">Logout</div>
-          </div>
-        ) : (
-          <div className="flex flex-row w-14 px-4 py-4 ml-1 bg-red-500 text-white hover:bg-red-700 hover:font-bold rounded-lg">
-            <img src={prop.icon} className="w-6" alt="IMG" />
-          </div>
-        )}
+        <div className={`flex flex-row ${prop.stateButton ? "w-48" : "w-14"} px-4 py-4 ml-1 bg-red-500 text-white hover:bg-red-700 hover:font-bold rounded-lg transition-all duration-500`}>
+          <img src={prop.icon} className="w-6" alt="IMG" />
+          {prop.stateButton && <div className="ml-2">Logout</div>}
+        </div>
       </div>
     );
   }
