@@ -7,6 +7,7 @@ import listIcon from "../../Images/list.png";
 import SearchBar from "./component/SearchBar";
 
 export default function TopBarMenu(prop) {
+
   return (
     <div className="z-10">
       <div className="fixed flex flex-row justify-between bg-white w-full top-0 h-16 focus:outline-white border-yellow-200 border-b">

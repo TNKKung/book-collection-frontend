@@ -7,8 +7,12 @@ import collectionIcon from "../../Images/collection.png";
 import storeIcon from "../../Images/store.png";
 import exitIcon from "../../Images/exit.png";
 import LogoutButton from "./component/LogoutButton";
+import { useDispatch } from "react-redux";
+import { stateBar } from "../../Reducer/actionSlice";
 
 export default function LeftBarMenu(prop) {
+  const dispatch = useDispatch();
+  dispatch(stateBar(prop.state));
   return (
     <div
       className={`fixed flex flex-col items-center ${

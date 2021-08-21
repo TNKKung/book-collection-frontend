@@ -6,7 +6,9 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage.js";
 import DisplayPage from "./pages/MyCollectionPage/component/DisplayPage";
 import PageLayout from "./components/PageLayout/PageLayout";
+
 function App() {
+
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />

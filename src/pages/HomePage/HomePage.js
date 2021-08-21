@@ -1,31 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import DisplayCollection from "../../components/DisplayCollection1/DisplayCollection1.js";
 import DisplayCollection2 from "../../components/DisplayCollection2/DisplayCollection2.js";
 import DisplayCollection3 from "../../components/DisplayCollection3/DisplayCollection3";
 import Data from "../../components/Data.json";
 import PageLayout from "../../components/PageLayout/PageLayout";
+import { useSelector } from "react-redux";
 
 export default function HomePage(props) {
-  const [state, setState] = useState(3);
-  const [stateLeftBar, setStateLeftBar] = useState(true);
-  const callBackToggleMenu = () => {
-    if (stateLeftBar === false) {
-      setStateLeftBar(true);
-    } else {
-      setStateLeftBar(false);
-    }
-  };
-
-  const callBackToggleState = () => {
-    if (state === 1) {
-      setState(2);
-    } else if (state === 2) {
-      setState(3);
-    } else {
-      setState(1);
-    }
-  };
-
+  const stateLeftBar = useSelector((state) => state.action.stateLeftBar);
+  const state = useSelector((state) => state.action.stateLayout)
   return (
     <PageLayout>
       {state === 1 && (
