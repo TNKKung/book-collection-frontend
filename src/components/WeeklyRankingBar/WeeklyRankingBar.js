@@ -9,7 +9,7 @@ export default function WeeklyRankingBar() {
           WEEKLY MANGA RANKINGS
         </div>
       </div>
-      <div className="flex justify-center mt-3 mb-4">
+      <div className="flex justify-center text-black mt-3 mb-4">
         <div className=" text-base">
           <Link className="hover:underline">
             <div>1.Demon Slayer</div>
@@ -27,7 +27,7 @@ export default function WeeklyRankingBar() {
           WEEKLY CATEGORY RANKINGS
         </div>
       </div>
-      <div className="flex justify-center mt-3 mb-4">
+      <div className="flex justify-center text-black mt-3 mb-4">
         <div className="space-y-3 text-base">
           <Link className="hover:underline">
             <div>1.manga</div>
@@ -43,7 +43,7 @@ export default function WeeklyRankingBar() {
       <div className="bg-yellow-100 flex items-center justify-center h-16 mt-3">
         <div className="font-bold text-lg text-black">All Categories</div>
       </div>
-      <div className="flex justify-center mt-3 mb-4">
+      <div className="flex justify-center text-black mt-3 mb-4">
         <div className="space-y-3 text-base">
           <Link className="hover:underline">
             <div>Philosophy & psychology</div>

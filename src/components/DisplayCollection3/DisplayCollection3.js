@@ -10,7 +10,7 @@ export default function DisplayCollection3(prop) {
           className="w-full h-52 rounded-t-lg"
           alt="IMG"
         />
-        <div className="mt-2 text-center">{prop.data.bookTitle}</div>
+        <div className="mt-2 text-black text-center">{prop.data.bookTitle}</div>
       </div>
     </Link>
   );

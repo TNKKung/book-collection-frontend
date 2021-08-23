@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../Images/logo.png";
+import Logo from "../../Images/logoBook.png";
 import PictureStore from "./component/bookStore.jpg";
 import { Link } from "react-router-dom";
 
@@ -13,8 +13,8 @@ export default function LoginPage() {
           alt="IMG"
         />
         <div className="w-96 h-96 sm:w-full sm:h-full p-8 sm:p-0 rounded-lg shadow-md 2xl:rounded-l-none bg-gradient-to-b from-yellow-500 to-yellow-300">
-          <div className="items-center flex flex-col mt-1">
-            <img src={Logo} className="w-48 mt-14 mb-5" alt="IMG" />
+          <div className="flex flex-col items-center mt-10">
+            <img src={Logo} className="w-40 mt-14 mb-5" alt="IMG" />
             <form className="w-80 mt-11" autoComplete="off">
               <input
                 className="w-full p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
