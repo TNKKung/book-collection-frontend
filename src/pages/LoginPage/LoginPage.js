@@ -13,7 +13,7 @@ export default function LoginPage() {
           alt="IMG"
         />
         <div className="w-96 h-96 sm:w-full sm:h-full p-8 sm:p-0 rounded-lg shadow-md 2xl:rounded-l-none bg-gradient-to-b from-yellow-500 to-yellow-300">
-          <div className="flex flex-col items-center mt-10">
+          <div className="flex flex-col items-center mt-20">
             <img src={Logo} className="w-40 mt-14 mb-5" alt="IMG" />
             <form className="w-80 mt-11" autoComplete="off">
               <input

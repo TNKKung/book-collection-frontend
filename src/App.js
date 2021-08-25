@@ -8,7 +8,15 @@ import DisplayPage from "./pages/MyCollectionPage/component/DisplayPage";
 import PageLayout from "./components/PageLayout/PageLayout";
 
 function App() {
-
+  if (
+    localStorage["nightwind-mode"] === "dark" ||
+    (!("nightwind-mode" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />

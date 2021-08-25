@@ -13,7 +13,7 @@ export default function RegisterPage() {
           alt="IMG"
         />
         <div className="w-96 h-96 sm:w-full sm:h-full p-8 sm:p-0 rounded-lg shadow-md 2xl:rounded-l-none bg-gradient-to-b from-yellow-500 to-yellow-300">
-          <div className="items-center flex flex-col mt-1">
+          <div className="items-center flex flex-col mt-10">
             <img src={Logo} className="w-24" alt="IMG" />
             <form className="w-80 mt-2" autoComplete="off">
               <div className="flex flex-col items-center text-base">

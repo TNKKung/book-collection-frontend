@@ -13,7 +13,7 @@ export default function LeftBarMenu(prop) {
     <div
       className={`fixed flex flex-col items-center ${
         prop.state ? "w-60" : "w-20"
-      } bg-white h-screen p-2 text-gray-900 border-r border-yellow-200 transition-all duration-500 overflow-x-hidden`}
+      } bg-white h-screen p-2 text-gray-900 border-r dark:border-yellow-100 border-yellow-200 transition-all duration-500 overflow-x-hidden`}
     >
       <div className="flex flex-wrap mt-8"></div>
       <div className="flex flex-col justify-center h-24 mb-4">
