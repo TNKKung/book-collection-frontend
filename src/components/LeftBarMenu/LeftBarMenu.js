@@ -3,27 +3,25 @@ import Menu from "./component/Menu";
 import LogoBook from "../../Images/logoBook.png";
 import exitIcon from "../../Images/exit.png";
 import LogoutButton from "./component/LogoutButton";
-import { useDispatch } from "react-redux";
-import { stateBar } from "../../Reducer/actionSlice";
+import { useSelector } from "react-redux";
 
-export default function LeftBarMenu(prop) {
-  const dispatch = useDispatch();
-  dispatch(stateBar(prop.state));
+export default function LeftBarMenu() {
+  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar)
   return (
     <div
       className={`fixed flex flex-col items-center ${
-        prop.state ? "w-60" : "w-20"
+        stateLeftBar ? "w-60" : "w-20"
       } bg-white h-screen p-2 text-gray-900 border-r dark:border-yellow-100 border-yellow-200 transition-all duration-500 overflow-x-hidden`}
     >
       <div className="flex flex-wrap mt-8"></div>
       <div className="flex flex-col justify-center h-24 mb-4">
         <img
           src={LogoBook}
-          className={prop.state ? "w-20 h-auto" : "w-12"}
+          className={stateLeftBar ? "w-20 h-auto" : "w-12"}
           alt="IMG"
         />
       </div>
-      <Menu path="/" name="Home" state={prop.state}>
+      <Menu path="/" name="Home" state={stateLeftBar}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -39,7 +37,7 @@ export default function LeftBarMenu(prop) {
           />
         </svg>
       </Menu>
-      <Menu path="/profile" name="Profile" state={prop.state}>
+      <Menu path="/profile" name="Profile" state={stateLeftBar}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -55,7 +53,7 @@ export default function LeftBarMenu(prop) {
           />
         </svg>
       </Menu>
-      <Menu path="/mycollection" name="My Collection" state={prop.state}>
+      <Menu path="/mycollection" name="My Collection" state={stateLeftBar}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -71,7 +69,7 @@ export default function LeftBarMenu(prop) {
           />
         </svg>
       </Menu>
-      <Menu path="/" name="My Store" state={prop.state}>
+      <Menu path="/" name="My Store" state={stateLeftBar}>
         <svg
           className="w-6 h-6"
           fill="none"
@@ -87,7 +85,7 @@ export default function LeftBarMenu(prop) {
           />
         </svg>
       </Menu>
-      <LogoutButton stateButton={prop.state} icon={exitIcon} />
+      <LogoutButton stateButton={stateLeftBar} icon={exitIcon} />
     </div>
   );
 }

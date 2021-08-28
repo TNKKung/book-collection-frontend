@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function WeeklyRankingBar() {
   return (
@@ -11,15 +10,15 @@ export default function WeeklyRankingBar() {
       </div>
       <div className="flex justify-center text-black mt-3 mb-4">
         <div className=" text-base">
-          <Link className="hover:underline">
+          <div className="hover:underline">
             <div>1.Demon Slayer</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>2.One Piece</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>3.Black Clover</div>
-          </Link>
+          </div>
         </div>
       </div>
       <div className="bg-yellow-100 flex items-center justify-center h-16 mt-3">
@@ -29,15 +28,15 @@ export default function WeeklyRankingBar() {
       </div>
       <div className="flex justify-center text-black mt-3 mb-4">
         <div className="space-y-3 text-base">
-          <Link className="hover:underline">
+          <div className="hover:underline">
             <div>1.manga</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>2.Course</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>3.Fiction</div>
-          </Link>
+          </div>
         </div>
       </div>
       <div className="bg-yellow-100 flex items-center justify-center h-16 mt-3">
@@ -45,36 +44,36 @@ export default function WeeklyRankingBar() {
       </div>
       <div className="flex justify-center text-black mt-3 mb-4">
         <div className="space-y-3 text-base">
-          <Link className="hover:underline">
+          <div className="hover:underline">
             <div>Philosophy & psychology</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Religion</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Social sciences</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Language</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Natural science & mathematic</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Technology (Applied Sciences</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Literature & rhetoric</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Literature</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>History and geography</div>
-          </Link>
-          <Link className="hover:underline">
+          </div>
+          <div className="hover:underline">
             <div>Manga</div>
-          </Link>
+          </div>
         </div>
       </div>
     </div>

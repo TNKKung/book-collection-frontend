@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 export const actionSlice = createSlice({
   name: "action",
   initialState: {
     stateLeftBar: true,
-    stateLayout: 3,
+    stateLayout: 2,
+    stateIconDark: true,
   },
   reducers: {
-    stateBar: (state, action) => {
-      state.stateLeftBar = action.payload;
+    toggleStateBar: (state) => {
+      state.stateLeftBar = !state.stateLeftBar;
     },
-    stateLayout: (state, action) => {
-      state.stateLayout = action.payload;
+    toggleStateLayout: (state) => {
+      state.stateLayout = ++state.stateLayout % 3;
+    },
+    toggleStateIconDark: (state) => {
+      state.stateIconDark = !state.stateIconDark;
     },
   },
 });
 
-export const { stateBar, stateLayout } = actionSlice.actions;
+export const { toggleStateBar, toggleStateLayout, toggleStateIconDark } =
+  actionSlice.actions;
 
 export default actionSlice.reducer;

@@ -6,17 +6,17 @@ import Data from "../../components/Data.json";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import { useSelector } from "react-redux";
 
-export default function HomePage(props) {
-  const stateLeftBar = useSelector((state) => state.action.stateLeftBar);
-  const state = useSelector((state) => state.action.stateLayout)
+export default function HomePage() {
+  const {stateLayout,stateLeftBar } = useSelector((state) => state.storeState);
   return (
     <PageLayout>
-      {state === 1 && (
+      {stateLayout === 0 && (
         <div className={`${stateLeftBar ? "ml-72 mr-56" : "ml-28 mr-56"}`}>
           <div className="object-center ml-72 space-y-2 mt-20">
             {Data.map((item) => {
               return (
                 <DisplayCollection
+                  key={item.Id}
                   Picture={item.picture}
                   BookTitle={item.bookTitle}
                   User={item.userName}
@@ -28,23 +28,23 @@ export default function HomePage(props) {
           </div>
         </div>
       )}
-      {state === 2 && (
+      {stateLayout === 1 && (
         <div className={`${stateLeftBar ? "ml-80 mr-56" : "ml-40 mr-56"}`}>
           <div className="space-x-1 space-y-2 mt-2">
             {Data.map((item) => {
-              return <DisplayCollection2 data={item} />;
+              return <DisplayCollection2 data={item} key={item.Id} />;
             })}
           </div>
         </div>
       )}{" "}
-      {state === 3 && (
+      {stateLayout === 2 && (
         <div
           className={`${stateLeftBar ? "ml-72 mr-56" : "xl:ml-28 xl:mr-56"}`}
         >
           <div className="space-y-4 mt-2">
             {Data.map((item) => {
               return (
-                <div className="inline-flex flex-col ml-2">
+                <div className="inline-flex flex-col ml-2" key={item.Id}>
                   <DisplayCollection3 data={item} />
                 </div>
               );
