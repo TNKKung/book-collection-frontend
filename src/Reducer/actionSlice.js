@@ -3,7 +3,7 @@ export const actionSlice = createSlice({
   name: "action",
   initialState: {
     stateLeftBar: true,
-    stateLayout: 2,
+    stateLayout: 1,
     stateIconDark: true,
   },
   reducers: {
@@ -11,7 +11,7 @@ export const actionSlice = createSlice({
       state.stateLeftBar = !state.stateLeftBar;
     },
     toggleStateLayout: (state) => {
-      state.stateLayout = ++state.stateLayout % 3;
+      state.stateLayout = ++state.stateLayout % 2;
     },
     toggleStateIconDark: (state) => {
       state.stateIconDark = !state.stateIconDark;

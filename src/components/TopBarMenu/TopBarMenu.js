@@ -66,7 +66,7 @@ export default function TopBarMenu() {
               nightwind.toggle();
               dispatch(toggleStateIconDark());
             }}
-            className="focus:outline-none flex flex-row items-center"
+            className="focus:outline-none flex flex-row items-center justify-center rounded-xl bg-yellow-100 dark:bg-yellow-100 h-8 w-8"
           >
             {stateIconDark ? (
               <svg
@@ -86,7 +86,7 @@ export default function TopBarMenu() {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-7 w-7 text-black"
+                className="h-7 w-7 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
