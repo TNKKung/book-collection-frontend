@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import FaceIcon from "../../../Images/facebook_icon.png";
 import IgIcon from "../../../Images/instagram_icon.png";
