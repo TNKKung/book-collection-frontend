@@ -12,6 +12,22 @@ export default function MyCollectionPage() {
 
   return (
     <PageLayout>
+      <button className="fixed right-80 bottom-12 bg-green-500 rounded-full w-16 h-16 flex justify-center items-center focus:outline-none hover:bg-green-700 ">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-10 w-10"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 4v16m8-8H4"
+          />
+        </svg>
+      </button>
       {stateLayout === 0 && (
         <div
           className={`${

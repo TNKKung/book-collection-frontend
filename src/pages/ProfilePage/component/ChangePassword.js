@@ -2,38 +2,54 @@ import React from "react";
 
 export default function ChangePassword() {
   return (
-    <div className="flex flex-row w-full h-72 justify-center items-center">
-      <div className="bg-white mt-6 w-10/12 h-full rounded-lg border-yellow-300 border-2 text-base font-bold">
-        <div className="flex flex-col items-center ml-5 mt-4">
-          <div className="flex flex-col justify-center">Old Password:</div>
-          <input
-            className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-            id="input-oldPassword"
-            type="password"
-            placeholder="**********"
-          />
-        </div>
-        <div className="flex flex-col items-center ml-5 mt-5">
-          <div className="flex flex-col justify-center">New Password:</div>
-          <input
-            className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-            id="input-newPassword"
-            type="password"
-            placeholder="**********"
-          />
-        </div>
-        <div className="flex flex-col items-center ml-5 mt-5">
-          <div className="flex flex-col justify-center">
-            Confirm New Password:
+    <form>
+      <div className="mr-20">
+        <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 ml-2">
+          <div className="flex flex-col justify-center w-44">
+            <div className="h-14 flex items-center">Old Password :</div>
           </div>
-          <input
-            className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-            id="input-confirmPassword"
-            type="password"
-            placeholder="**********"
-          />
+          <div className="flex flex-col justify-center">
+            <div className="h-14 flex items-center w-72">
+              <input
+                className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                id="input-instagram"
+                type="text"
+                placeholder={"**********"}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 ml-2">
+          <div className="flex flex-col justify-center w-44">
+            <div className="h-14 flex items-center">New Password :</div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="h-14 flex items-center w-72">
+              <input
+                className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                id="input-instagram"
+                type="text"
+                placeholder={"**********"}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 ml-2">
+          <div className="flex flex-col justify-center w-44">
+            <div className="h-14 flex items-center">Confirm Password :</div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="h-14 flex items-center w-72">
+              <input
+                className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                id="input-instagram"
+                type="text"
+                placeholder={"**********"}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
