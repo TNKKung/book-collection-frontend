@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function DisplayCollection2(prop) {
   return (
-    <Link to={{ pathname: "/displaypage", state: { data: prop.data }}} className="ml-3">
+    <Link to={{ pathname: "/pagebookdetail", state: { data: prop.data }}} className="ml-3">
       <div className="inline-flex flex-col mb-3">
         <div className="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-xl">
           <div className="md:flex ">

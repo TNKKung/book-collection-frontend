@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import DisplayCollection2 from "../../components/DisplayCollection2/DisplayCollection2";
 import DisplayCollection3 from "../../components/DisplayCollection3/DisplayCollection3";
 import Data from "../../components/Data.json";
@@ -12,22 +13,24 @@ export default function MyCollectionPage() {
 
   return (
     <PageLayout>
-      <button className="fixed right-80 bottom-12 bg-green-500 rounded-full w-16 h-16 flex justify-center items-center focus:outline-none hover:bg-green-700 ">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-10 w-10"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 4v16m8-8H4"
-          />
-        </svg>
-      </button>
+      <Link to="/addcollection">
+        <div className="h-24 w-24 fixed right-80 bottom-16 bg-green-400 hover:bg-green-700 text-white flex items-center justify-center rounded-full">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-14 w-14"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 4v16m8-8H4"
+            />
+          </svg>
+        </div>
+      </Link>
       {stateLayout === 0 && (
         <div
           className={`${

@@ -1,16 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import FaceIcon from "../../../Images/facebook_icon.png";
-import IgIcon from "../../../Images/instagram_icon.png";
-import LineIcon from "../../../Images/line_icon.png";
-import Data from "../../../components/Data.json";
-import PageLayout from "../../../components/PageLayout/PageLayout";
+import FaceIcon from "../../Images/facebook_icon.png";
+import IgIcon from "../../Images/instagram_icon.png";
+import LineIcon from "../../Images/line_icon.png";
+import Data from "../../components/Data.json";
+import PageLayout from "../../components/PageLayout/PageLayout";
 
-export default function DisplayPage(prop) {
-  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar)
+export default function PageBookDetail(prop) {
+  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar);
   return (
     <PageLayout>
-      <div className={`flex justify-center max-6xl w-full ${stateLeftBar ? "ml-72" : "ml-56"} mt-12 transition-all duration-500`}>
+      <div
+        className={`flex justify-center max-6xl w-full ${
+          stateLeftBar ? "ml-72" : "ml-56"
+        } mt-12 transition-all duration-500`}
+      >
         <div className="flex flex-col justify-center items-center mt-8">
           <div className="flex flex-col bg-white max-w-5xl w-full rounded-lg shadow-xl">
             <div className="flex flex-row justify-center ml-8 mt-8">
