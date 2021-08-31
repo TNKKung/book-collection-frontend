@@ -6,7 +6,7 @@ import LogoutButton from "./component/LogoutButton";
 import { useSelector } from "react-redux";
 
 export default function LeftBarMenu() {
-  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar)
+  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar);
   return (
     <div
       className={`fixed flex flex-col items-center ${
