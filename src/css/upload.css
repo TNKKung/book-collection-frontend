@@ -41,7 +41,6 @@ input[type="file"] {
   opacity: 0;
   cursor: pointer;
 }
-
 :hover {
   background-position: 0 -100%;
 }
