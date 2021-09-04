@@ -1,26 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Select from "react-select";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import "../../css/upload.css";
 
 export default function AddCollectionPage() {
   const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar);
-  const options = [
-    { value: "Manga", label: "Manga" },
-    { value: "Course", label: "Course" },
-    { value: "Fiction", label: "Fiction" },
-    { value: "Religion", label: "Religion" },
-    { value: "Language", label: "Language" },
-    { value: "Social sciences", label: "Social sciences" },
-    { value: "Literature", label: "Literature" },
-    {
-      value: "Natural science & mathematic",
-      label: "Natural science & mathematic",
-    },
-    { value: "History and geography", label: "History and geography" },
-  ];
   return (
     <PageLayout>
       <div
@@ -75,18 +60,18 @@ export default function AddCollectionPage() {
               <div className="flex flex-col justify-center w-44">
                 <div className="h-14 flex items-center">Categories :</div>
               </div>
-              <div className="flex flex-col justify-center">
-                <div className="h-14 flex items-center w-72">
-                  <Select
-                    className="basic-single w-72 border-2 border-gray-300 rounded-md"
-                    isLoading={true}
-                    isClearable={true}
-                    isSearchable={true}
-                    defaultValue={options[0]}
-                    options={options}
-                    name="color"
-                  />
-                </div>
+              <div className="relative h-12 w-72">
+                <select className="border-2 rounded-md border-gray-300 w-full h-full" >
+                  <option>Manga</option>
+                  <option>Fiction</option>
+                  <option>Course</option>
+                  <option>Religion</option>
+                  <option>Language</option>
+                  <option>Social sciences</option>
+                  <option>Literature</option>
+                  <option>Natural science & mathematic</option>
+                  <option>History and geography</option>
+                </select>
               </div>
             </div>
             <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3">

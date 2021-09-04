@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { Link} from "react-router-dom";
 import Data from "../../Data.json";
 
 export default function SearchBar() {
   const [searchText, setSearchText] = useState("");
+  const [value,setValue] = useState("");
+
 
   return (
     <div
@@ -30,7 +33,11 @@ export default function SearchBar() {
         >
           {Data.map((item) => {
             return (
-              <div className="ml-5">{searchText.length > 2 && <div>{item.bookTitle}</div>}</div>
+              <Link to={`/${value}`}>
+                <div onClick={()=>{setValue(item.bookTitle)}}>
+                  {searchText.length > 2 && <div className="hover:bg-gray-200 h-8">{item.bookTitle}</div>}
+                </div>
+              </Link>
             );
           })}
         </div>

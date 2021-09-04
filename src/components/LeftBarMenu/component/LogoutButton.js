@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 export default function LogoutButton(prop) {
-  console.log(prop.state);
   const data = {
     name: "nattawut",
   };
