@@ -33,7 +33,7 @@ export default function Profile(props) {
                 <div className="">{props.Data.lastName}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none focus:out"
                   id="input-instagram"
                   type="text"
                   placeholder={props.Data.lastName}
@@ -55,7 +55,8 @@ export default function Profile(props) {
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
-                  placeholder={props.Data.email}
+                  value={props.Data.email}
+                  disabled
                 />
               )}
             </div>
