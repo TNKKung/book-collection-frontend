@@ -33,7 +33,7 @@ export default function SearchBar() {
         >
           {Data.map((item) => {
             return (
-              <Link to={`/${value}`}>
+              <Link to={`/${value}`} key={item.Id}>
                 <div onClick={()=>{setValue(item.bookTitle)}}>
                   {searchText.length > 2 && <div className="hover:bg-gray-200 h-8">{item.bookTitle}</div>}
                 </div>
