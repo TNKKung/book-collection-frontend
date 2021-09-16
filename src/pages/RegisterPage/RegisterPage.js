@@ -4,15 +4,13 @@ import { useHistory } from "react-router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { connectingRegister } from "../../Reducer/actionApi";
-import axios from "axios";
 import * as yup from "yup";
 
 import PictureStore from "../LoginPage/component/bookStore.jpg";
 
 export default function RegisterPage() {
-  const today = new Date();
+
   const dispatch = useDispatch();
-  console.log(today);
   const schema = yup.object().shape({
     email: yup.string().required("Please enter the required field").email(),
     password: yup
@@ -32,7 +30,7 @@ export default function RegisterPage() {
       .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for this field ")
       .max(18)
       .min(1),
-    birth_date: yup.date().max(today),
+    birth_date: yup.string() ,
     tell: yup
       .string()
       .required("Please enter the required field")
