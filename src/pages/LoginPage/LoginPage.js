@@ -20,7 +20,7 @@ export default function LoginPage() {
                 className="w-full p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                 id="input-email"
                 type="email"
-                placeholder="Username"
+                placeholder="Email"
               />
               <input
                 className="w-full mt-4 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"

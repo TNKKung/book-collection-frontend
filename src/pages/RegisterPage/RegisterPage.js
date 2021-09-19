@@ -1,16 +1,13 @@
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch } from "react-redux";
-import { connectingRegister } from "../../Reducer/actionApi";
 import * as yup from "yup";
 
 import PictureStore from "../LoginPage/component/bookStore.jpg";
 
 export default function RegisterPage() {
-
-  const dispatch = useDispatch();
   const schema = yup.object().shape({
     email: yup.string().required("Please enter the required field").email(),
     password: yup
@@ -30,7 +27,7 @@ export default function RegisterPage() {
       .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for this field ")
       .max(18)
       .min(1),
-    birth_date: yup.string() ,
+    birth_date: yup.string(),
     tell: yup
       .string()
       .required("Please enter the required field")
@@ -48,7 +45,7 @@ export default function RegisterPage() {
     history.push("/login");
   };
   const onSubmit = (data) => {
-    dispatch(connectingRegister(data));
+    axios.post("http://localhost:3003/v1/auth/register", data);
     console.log(errors);
     nextStepClick();
   };
