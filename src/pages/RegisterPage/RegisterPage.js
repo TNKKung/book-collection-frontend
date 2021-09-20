@@ -1,8 +1,8 @@
 import React from "react";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useUser } from "../../state/userAction/hooks";
 import * as yup from "yup";
 
 import PictureStore from "../LoginPage/component/bookStore.jpg";
@@ -45,7 +45,7 @@ export default function RegisterPage() {
     history.push("/login");
   };
   const onSubmit = (data) => {
-    axios.post("http://localhost:3003/v1/auth/register", data);
+    useUser.handleRegister(data);
     console.log(errors);
     nextStepClick();
   };

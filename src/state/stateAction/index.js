@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export const initialState = {
+  stateLeftBar: true,
+  stateLayout: 1,
+  stateIconDark: true,
+};
+
 export const actionSlice = createSlice({
-  name: "action",
-  initialState: {
-    stateLeftBar: true,
-    stateLayout: 1,
-    stateIconDark: true,
-  },
+  name: "user",
+  initialState,
   reducers: {
     toggleStateBar: (state) => {
       state.stateLeftBar = !state.stateLeftBar;
@@ -19,7 +21,6 @@ export const actionSlice = createSlice({
     },
   },
 });
-
 export const { toggleStateBar, toggleStateLayout, toggleStateIconDark } =
   actionSlice.actions;
 

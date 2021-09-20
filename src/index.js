@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./css/tailwind.css";
-import store from "./Reducer/store";
+import store from "./state";
 import { Provider } from "react-redux";
 
 ReactDOM.render(
