@@ -5,18 +5,18 @@ export default function DisplayCollection1(prop) {
   return (
     <div className="bg-black w-full">
       <div className="mr-96">
-        <div class="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-2xl">
-          <div class="md:flex ">
-            <div class="md:flex-shrink-0hidden 2xl:block ">
+        <div className="mx-auto bg-white rounded-md shadow-lg overflow-hidden md:max-w-2xl">
+          <div className="md:flex ">
+            <div className="md:flex-shrink-0hidden 2xl:block ">
               <img
-                class="h-52 w-full md:w-52"
+                className="h-52 w-full md:w-52"
                 src={prop.Picture}
                 width="1"
                 alt="IMG"
               />
             </div>
-            <div class="p-8">
-              <div class="uppercase tracking-wide text-lg text-indigo-500 font-mono">
+            <div className="p-8">
+              <div className="uppercase tracking-wide text-lg text-indigo-500 font-mono">
                 {prop.BookTitle}
               </div>
               <div className="flex flex-row">
@@ -41,18 +41,18 @@ export default function DisplayCollection1(prop) {
                       <div className="relative w-auto my-6 mx-auto max-w-3xl">
                         <div className="border-0 rounded-lg shadow- relative flex flex-col w-full bg-white outline-none focus:outline-none">
                           <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                            <div class="md:flex ">
-                              <div class="md:flex-shrink-0hidden 2xl:block ">
+                            <div className="md:flex ">
+                              <div className="md:flex-shrink-0hidden 2xl:block ">
                                 <img
-                                  class="h-80 w-full md:w-52 rounded-xl object-cover"
+                                  className="h-80 w-full md:w-52 rounded-xl object-cover"
                                   src={prop.Picture}
                                   width="1"
                                   alt="IMG"
                                 />
                               </div>
                               <div className="">
-                                <div class="p-8 bg-gray-300 rounded-lg ml-4">
-                                  <div class="uppercase tracking-wide text-lg text-indigo-500 font-mono">
+                                <div className="p-8 bg-gray-300 rounded-lg ml-4">
+                                  <div className="uppercase tracking-wide text-lg text-indigo-500 font-mono">
                                     {prop.BookTitle}
                                   </div>
                                   <div className="flex flex-row">

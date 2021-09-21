@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import MyCollectionPage from "./pages/MyCollectionPage/MyCollectionPage.js";
 import PageBookDetail from "./pages/PageBookDetail/PageBookDetail";
 import AddCollectionPage from "./pages/AddCollectionPage/AddCollectionPage";
+import ProtecteRoute from "./components/ProtecteRoute";
 
 function App() {
   if (
@@ -22,10 +23,11 @@ function App() {
       <Route exact path="/" component={HomePage}/>
       <Route exact path="/Login" component={LoginPage}/>
       <Route exact path="/register" component={RegisterPage}/>
-      <Route exact path="/profile" component={ProfilePage} />
+      <ProtecteRoute exact path="/profile" component={ProfilePage} />
       <Route exact path="/mycollection" component={MyCollectionPage} />
       <Route exact path="/pagebookdetail" component={PageBookDetail} />
       <Route exact path="/addcollection" component={AddCollectionPage} />
+
     </Switch>
   );
 }

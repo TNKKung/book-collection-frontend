@@ -8,40 +8,46 @@ export const initialState = {
   error: undefined,
 };
 
-export const fetchRegister = createAsyncThunk("user/fetchRegister", async (data) => {
-  const respone = await axios.post(API_URL + "auth/register", data);
-  return respone.data;
-});
+export const fetchRegister = createAsyncThunk(
+  "user/fetchRegister",
+  async (data) => {
+    const respone = await axios.post(API_URL + "auth/register", data);
+    return respone.data;
+  }
+);
 
-export const fetchLogin = createAsyncThunk("user/fetchLogin",async (data) => {
+export const fetchLogin = createAsyncThunk("user/fetchLogin", async (data) => {
   const respone = await axios.post(API_URL + "auth/login", data);
   return respone.data;
 });
 
+export const fetchLogout = createAsyncThunk(
+  "user/fetchLogout",
+  async (refreshToken) => {
+    await axios.post(API_URL + "auth/logout", {refreshToken});
+  }
+);
+
 export const apiSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {
-    // apiResgister: (state, action) => {
-    //   fetchRegister(action.payload);
-    // },
-    // apiLogin: (state, action) => {
-    //   const a = fetchLogin(action.payload);
-    //   console.log(a.data);
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchRegister.fulfilled, (state, action) => {
         console.log(action.payload);
       })
       .addCase(fetchLogin.fulfilled, (state, action) => {
-        console.log(action.payload)
-        state.tokens = action.payload.tokens
-        state.user = action.payload.user
+        state.tokens = action.payload.tokens;
+        state.user = action.payload.user;
+      })
+      .addCase(fetchLogout.fulfilled, (state) => {
+        console.log("tamtam");
+        state.user = undefined;
+        state.tokens = undefined;
       });
   },
 });
-export const { apiResgister, apiLogin } = apiSlice.actions;
+
 
 export default apiSlice.reducer;

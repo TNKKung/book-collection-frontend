@@ -66,7 +66,7 @@ export default function PageBookDetail(prop) {
               <div className="flex flex-row space-x-2 w-4/4">
                 {Data.map((item) => {
                   return (
-                    <div className="flex flex-col w-32 h-48 rounded-xl">
+                    <div className="flex flex-col w-32 h-48 rounded-xl" key={item.key}>
                       <div className="flex justify-center mt-2">
                         <img
                           src={item.picture}

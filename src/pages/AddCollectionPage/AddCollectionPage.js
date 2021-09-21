@@ -17,8 +17,8 @@ export default function AddCollectionPage() {
           <div className="flex flex-row text-black">
             <div className="flex flex-col w-screen max-w-lg items-center justify-center text-black text-xl">
               <div className="border-4 border-yellow-400 rounded-full">
-                <div class="wrapper">
-                  <div class="file-upload flex flex-col">
+                <div className="wrapper">
+                  <div className="file-upload flex flex-col">
                     <input type="file" />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

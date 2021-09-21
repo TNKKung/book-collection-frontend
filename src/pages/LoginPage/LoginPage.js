@@ -1,19 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch } from "react-redux";
-import { apiLogin } from "../../state/userAction";
 import { useUser } from "../../state/userAction/hooks";
-import * as yup from "yup";
+import { useSelector } from "react-redux";
 
 import Logo from "../../Images/logoBook.png";
 import PictureStore from "./component/bookStore.jpg";
 
 export default function LoginPage() {
   const { handleLogin } = useUser();
-  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userApi.user);
   const schema = yup.object().shape({
     email: yup.string().required("Please enter the required field").email(),
     password: yup
@@ -27,16 +26,16 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
-  const history = useHistory();
+  const { push } = useHistory();
 
-  const nextStepClick = () => {
-    history.push("/login");
-  };
   const onSubmit = (data) => {
     handleLogin(data);
     console.log(errors);
-    // nextStepClick();
   };
+
+  useEffect(() => {
+    if (user) push("/");
+  }, [user, push]);
   return (
     <div className="flex justify-center items-center w-full h-screen">
       <div className="flex flex-row justify-center items-center w-9/12 h-5/6 shadow-2xl">

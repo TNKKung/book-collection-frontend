@@ -41,6 +41,7 @@ export default function ProfilePage() {
       setStateChangePassword(true);
     }
   }
+
   return (
     <PageLayout>
       <div
@@ -61,7 +62,7 @@ export default function ProfilePage() {
             </div>
           </div>
           <div className="flex flex-col w-screen max-w-2xl text-black items-center mt-4">
-            <Profile stateEditProfile={stateEditProfile} Data={Data} />
+            <Profile stateEditProfile={stateEditProfile} />
             <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 mr-8">
               <div className="flex flex-col justify-center w-44">
                 <div className="h-14 flex items-center">All My Books :</div>

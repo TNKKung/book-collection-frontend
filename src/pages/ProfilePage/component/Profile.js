@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Profile(props) {
+  const user = useSelector((state) => state.userApi.user)
   return (
     <form>
       <div className="mr-20">
@@ -11,13 +13,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.firstName}</div>
+                <div className="">{user.first_name}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
-                  placeholder={props.Data.firstName}
+                  placeholder={user.first_name}
                 />
               )}
             </div>
@@ -30,13 +32,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.lastName}</div>
+                <div className="">{user.last_name}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none focus:out"
                   id="input-instagram"
                   type="text"
-                  placeholder={props.Data.lastName}
+                  placeholder={user.last_name}
                 />
               )}
             </div>
@@ -49,13 +51,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.email}</div>
+                <div className="">{user.email}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
-                  value={props.Data.email}
+                  value={user.email}
                   disabled
                 />
               )}
@@ -69,13 +71,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.tell}</div>
+                <div className="">{user.tell}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
-                  placeholder={props.Data.tell}
+                  placeholder={user.tell}
                 />
               )}
             </div>
@@ -88,13 +90,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.address}</div>
+                <div className="">{user.address}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
-                  placeholder={props.Data.address}
+                  placeholder={user.address}
                 />
               )}
             </div>
@@ -107,13 +109,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{props.Data.birthDay}</div>
+                <div className="">{user.birthDay}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="date"
-                  placeholder={props.Data.birthDay}
+                  placeholder={user.birthDay}
                 />
               )}
             </div>

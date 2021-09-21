@@ -8,6 +8,7 @@ import * as yup from "yup";
 import PictureStore from "../LoginPage/component/bookStore.jpg";
 
 export default function RegisterPage() {
+  const { handleRegister } = useUser();
   const schema = yup.object().shape({
     email: yup.string().required("Please enter the required field").email(),
     password: yup
@@ -45,7 +46,7 @@ export default function RegisterPage() {
     history.push("/login");
   };
   const onSubmit = (data) => {
-    useUser.handleRegister(data);
+    handleRegister(data);
     console.log(errors);
     nextStepClick();
   };
