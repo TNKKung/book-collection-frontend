@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function Profile(props) {
-  const user = useSelector((state) => state.userApi.user)
+  const { user } = useSelector((state) => state.userApi);
   return (
     <form>
       <div className="mr-20">
@@ -109,13 +109,13 @@ export default function Profile(props) {
           <div className="flex flex-col justify-center">
             <div className="h-14 flex items-center w-72">
               {props.stateEditProfile ? (
-                <div className="">{user.birthDay}</div>
+                <div className="">{user.birth_date}</div>
               ) : (
                 <input
                   className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="date"
-                  placeholder={user.birthDay}
+                  placeholder={user.birth_date}
                 />
               )}
             </div>

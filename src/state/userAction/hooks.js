@@ -1,9 +1,9 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRegister, fetchLogin, fetchLogout } from ".";
+import { fetchRegister, fetchLogin, fetchLogout, fetchCreateBook } from ".";
 
 export const useUser = () => {
-  const tokens = useSelector((state) => state.userApi.tokens);
+  const {tokens} = useSelector((state) => state.userApi);
   const dispatch = useDispatch();
   const handleRegister = useCallback(
     (data) => {
@@ -23,5 +23,12 @@ export const useUser = () => {
     tokens && dispatch(fetchLogout(tokens.refresh.token));
   }, [tokens, dispatch]);
 
-  return { handleRegister, handleLogin, handleLogout };
+  const handleCreateBook = useCallback(
+    (data) => {
+      dispatch(fetchCreateBook(data));
+    },
+    [dispatch]
+  );
+
+  return { handleRegister, handleLogin, handleLogout, handleCreateBook };
 };
