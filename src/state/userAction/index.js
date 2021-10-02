@@ -28,6 +28,15 @@ export const fetchLogout = createAsyncThunk(
   }
 );
 
+export const fetchUser = createAsyncThunk("user/fetchUser", async (data) => {
+  const respone = await axios.get(API_URL + "users/", {
+    headers: {
+      Authorization: `${data}`,
+    },
+  });
+  return respone.data;
+});
+
 export const fetchCreateBook = createAsyncThunk(
   "book/createbook",
   async (data) => {
@@ -47,13 +56,17 @@ export const apiSlice = createSlice({
         state.tokens = action.payload.tokens;
       })
       .addCase(fetchLogin.fulfilled, (state, action) => {
-        console.log(action.payload.user);
+        console.log(action.payload);
         state.tokens = action.payload.tokens;
         state.user = action.payload.user;
       })
       .addCase(fetchLogout.fulfilled, (state) => {
         state.user = undefined;
         state.tokens = undefined;
+      })
+      .addCase(fetchUser.fulfilled, (state, action) => {
+        state.user = action.payload.user;
+        state.tokens = action.payload.tokens;
       })
       .addCase(fetchCreateBook.fulfilled, (state, action) => {
         console.log(action.payload);

@@ -7,7 +7,7 @@ import PageLayout from "../../components/PageLayout/PageLayout";
 import "../../css/upload.css";
 
 export default function AddCollectionPage() {
-  const stateLeftBar = useSelector((state) => state.storeState.stateLeftBar);
+  const { stateLeftBar } = useSelector((state) => state.storeState);
   const { user } = useSelector((state) => state.userApi);
   const history = useHistory();
   const { handleCreateBook } = useUser();

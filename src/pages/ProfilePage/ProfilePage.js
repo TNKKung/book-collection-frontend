@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { useUser } from "../../state/userAction/hooks";
 import PictureProfile from "../../Images/profile.jpg";
 import FaceIcon from "../../Images/facebook_icon.png";
 import LineIcon from "../../Images/line_icon.png";
@@ -9,14 +10,10 @@ import Profile from "./component/Profile";
 import ChangePassword from "./component/ChangePassword";
 
 export default function ProfilePage() {
+  const { handleGetUser } = useUser();
+
   const Data = {
     pictureProfile: PictureProfile,
-    firstName: "Nattawut",
-    lastName: "Krongareetham",
-    birthDay: "06/12/2000",
-    email: "tomkabtokom@gmail.com",
-    tell: "0640630406",
-    address: "28/22 หมู่ 4 ต.บางล่าง อ.บางบน จ.บางซ้าย",
     AllBook: "14",
     facebook: "nattawut krongareetham",
     instagram: "tomn_k3319",
@@ -41,6 +38,8 @@ export default function ProfilePage() {
       setStateChangePassword(true);
     }
   }
+
+  handleGetUser();
 
   return (
     <PageLayout>
