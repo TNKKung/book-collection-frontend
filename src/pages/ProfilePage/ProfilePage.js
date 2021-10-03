@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useUser } from "../../state/userAction/hooks";
 import PictureProfile from "../../Images/profile.jpg";
 import PageLayout from "../../components/PageLayout/PageLayout";
 import Profile from "./component/Profile";
 
 export default function ProfilePage() {
-  const { handleGetUser } = useUser();
 
   const Data = {
     pictureProfile: PictureProfile,
@@ -26,7 +24,6 @@ export default function ProfilePage() {
     }
   }
 
-  handleGetUser();
 
   return (
     <PageLayout>

@@ -40,7 +40,7 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async (data) => {
 export const fetchUpdateUser = createAsyncThunk(
   "user/fetchUpdateUser",
   async (data) => {
-    const respone = await axios.patch(API_URL + "users/", {data});
+    const respone = await axios.patch(API_URL + "users/", data);
     return respone.data;
   }
 );

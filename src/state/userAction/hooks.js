@@ -10,7 +10,7 @@ import {
 } from ".";
 
 export const useUser = () => {
-  const { tokens } = useSelector((state) => state.userApi);
+  const { user, tokens } = useSelector((state) => state.userApi);
   const dispatch = useDispatch();
   const handleRegister = useCallback(
     (data) => {
@@ -35,8 +35,7 @@ export const useUser = () => {
   }, [tokens, dispatch]);
 
   const handleUpdateUser = useCallback(
-    () => (data) => {
-      console.log("111")
+    (data) => {
       dispatch(fetchUpdateUser(data));
     },
     [dispatch]

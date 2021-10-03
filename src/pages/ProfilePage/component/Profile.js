@@ -13,6 +13,7 @@ export default function Profile(props) {
   } = useForm();
 
   const onSubmit = (data) => {
+    Object.assign(data, { _id: user.id });
     handleUpdateUser(data);
     console.log(errors);
   };
