@@ -1,10 +1,23 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
+import { useUser } from "../../../state/userAction/hooks";
 
 export default function Profile(props) {
   const { user } = useSelector((state) => state.userApi);
+  const { handleUpdateUser } = useUser();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    handleUpdateUser(data);
+    console.log(errors);
+  };
   return (
-    <form>
+    <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
       <div className="mr-20">
         <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 ml-2">
           <div className="flex flex-col justify-center w-44">
@@ -16,10 +29,10 @@ export default function Profile(props) {
                 <div className="">{user.first_name}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-                  id="input-instagram"
+                  className="w-full mt-2 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   type="text"
-                  placeholder={user.first_name}
+                  placeholder="somechai"
+                  {...register("first_name")}
                 />
               )}
             </div>
@@ -35,10 +48,10 @@ export default function Profile(props) {
                 <div className="">{user.last_name}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none focus:out"
-                  id="input-instagram"
+                  className="w-full mt-2 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none "
                   type="text"
-                  placeholder={user.last_name}
+                  placeholder="Nadee"
+                  {...register("last_name")}
                 />
               )}
             </div>
@@ -54,7 +67,7 @@ export default function Profile(props) {
                 <div className="">{user.email}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
+                  className="w-full h-12 pl-3 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                   id="input-instagram"
                   type="text"
                   value={user.email}
@@ -74,10 +87,10 @@ export default function Profile(props) {
                 <div className="">{user.tell}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-                  id="input-instagram"
+                  className="w-full p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none "
                   type="text"
-                  placeholder={user.tell}
+                  placeholder="088888888"
+                  {...register("tell")}
                 />
               )}
             </div>
@@ -92,11 +105,10 @@ export default function Profile(props) {
               {props.stateEditProfile ? (
                 <div className="">{user.address}</div>
               ) : (
-                <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-                  id="input-instagram"
-                  type="text"
-                  placeholder={user.address}
+                <textarea
+                  className="w-full mt-2 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none "
+                  placeholder="28 หมู่ 7"
+                  {...register("address")}
                 />
               )}
             </div>
@@ -112,16 +124,39 @@ export default function Profile(props) {
                 <div className="">{user.birth_date}</div>
               ) : (
                 <input
-                  className="w-3/4 h-10 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
-                  id="input-instagram"
+                  className="w-full mt-2 p-2 pl-4 rounded-lg border-2 border-gray-300 focus:border-blue-500 focus:outline-none "
                   type="date"
-                  placeholder={user.birth_date}
+                  placeholder="01/01/1999"
+                  {...register("birth_date")}
                 />
               )}
             </div>
           </div>
         </div>
+        <div className="flex flex-row items-center w-full max-w-lg text-xl mb-3 mr-8">
+          <div className="flex flex-col justify-center w-44">
+            <div className="h-14 flex items-center">All My Books :</div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="h-14 flex items-center w-72">
+              <div className="">14</div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {props.stateEditProfile ? (
+        <div></div>
+      ) : (
+        <div className="flex flex-row justify-center mb-5 ">
+          <button
+            className="bg-green-500 h-14 w-36 rounded-lg focus:outline-none"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      )}
     </form>
   );
 }

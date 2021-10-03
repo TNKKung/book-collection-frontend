@@ -6,6 +6,7 @@ import {
   fetchLogout,
   fetchCreateBook,
   fetchUser,
+  fetchUpdateUser,
 } from ".";
 
 export const useUser = () => {
@@ -32,6 +33,15 @@ export const useUser = () => {
   const handleGetUser = useCallback(() => {
     tokens && dispatch(fetchUser(tokens.refresh.token));
   }, [tokens, dispatch]);
+
+  const handleUpdateUser = useCallback(
+    () => (data) => {
+      console.log("111")
+      dispatch(fetchUpdateUser(data));
+    },
+    [dispatch]
+  );
+
   const handleCreateBook = useCallback(
     (data) => {
       dispatch(fetchCreateBook(data));
@@ -45,5 +55,6 @@ export const useUser = () => {
     handleLogout,
     handleCreateBook,
     handleGetUser,
+    handleUpdateUser,
   };
 };

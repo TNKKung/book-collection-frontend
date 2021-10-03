@@ -37,6 +37,14 @@ export const fetchUser = createAsyncThunk("user/fetchUser", async (data) => {
   return respone.data;
 });
 
+export const fetchUpdateUser = createAsyncThunk(
+  "user/fetchUpdateUser",
+  async (data) => {
+    const respone = await axios.patch(API_URL + "users/", {data});
+    return respone.data;
+  }
+);
+
 export const fetchCreateBook = createAsyncThunk(
   "book/createbook",
   async (data) => {
@@ -67,6 +75,9 @@ export const apiSlice = createSlice({
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.user = action.payload.user;
         state.tokens = action.payload.tokens;
+      })
+      .addCase(fetchUpdateUser.fulfilled, (state, action) => {
+        state.user = action.payload.user;
       })
       .addCase(fetchCreateBook.fulfilled, (state, action) => {
         console.log(action.payload);
